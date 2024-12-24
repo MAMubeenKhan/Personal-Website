@@ -1,0 +1,207 @@
+#hero {
+    background-color: #CDF5FD;
+    color: #00A9FF;
+    text-align: center;
+    font-size: 50px;
+    margin-top: -40px;
+    padding-top: 130px;
+    padding-bottom: 50px;
+    font-family: "Sour Gummy", serif;
+    font-optical-sizing: auto;
+    font-weight: <bold>;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+}   
+
+
+#designing {
+    margin-right: 300px;
+    margin-top: 70px;
+}
+
+#coding {
+    margin-top: 70px;
+    @media (max-width: 576px) {
+        height: 70px;
+    }
+    @media (min-width: 577px) and (max-width: 768px) {
+        height: 100px;
+    }
+    @media (min-width: 768px) and (max-width: 992px) {
+        height: 110px;
+    }
+    @media (min-width: 993px) and (max-width: 1200px) {
+        height: 130px;
+    }
+}
+
+#designing {
+    @media (max-width: 576px) {
+        height: 70px;
+        display: inline;
+        margin-right: 30px;
+    }
+    @media (min-width: 577px) and (max-width: 768px) {
+        display: inline;
+        height: 100px;
+        margin-right: 10px;
+    }
+    @media (min-width: 768px) and (max-width: 992px) {
+        height: 110px;
+    }
+    @media (min-width: 993px) and (max-width: 1200px) {
+        height: 130px;
+    }
+}
+
+#hero p {
+    margin-top: 20px;
+    font-size: 35px;
+    font-family: "Roboto", serif;
+  font-weight: 400;
+  font-style: normal;
+  @media (min-width: 768px) and (max-width: 992px) {
+    font-size: 30px;    
+}
+}
+
+#about-me{
+    display: flex;
+    justify-content: center;
+    #my-photo{
+        margin-top: 100px;
+        height: 200px;
+        border-radius: 50%;
+    }
+    text-align: center;
+    font-family: "Roboto", serif;
+  font-weight: 400;
+  font-style: normal;
+  @media (max-width: 576px) {
+    margin-top: -70px;
+    p {
+        margin-bottom: -70px;
+    }
+    }
+    @media (min-width: 577px) and (max-width: 768px) {
+        #my-photo {
+            margin-top: 20px;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 992px) {
+        #my-photo {
+            margin-top: 30px;
+        }
+    }
+    @media (min-width: 993px) and (max-width: 1200px) {
+        #my-photo {
+            margin-top: 30px;
+        }
+    }
+}
+
+#about-me h2 {
+    color: #89CFF3;
+    font-size: 40px;
+}
+
+#about-me p {
+    font-size: 20px;
+}
+
+#projects {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    #resume, #portfolio{
+        border: #00A9FF solid 1px;
+    }
+    @media (max-width: 576px) {
+        margin-top: 20px;
+    }
+}
+
+#projects h2 {
+    color: #89CFF3;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+#projects p {
+    font-size: 20px;
+}
+
+#resume {
+    height: 200px;
+}
+
+#portfolio {
+    margin-bottom: 70px;
+    width: 235px;
+    @media (max-width: 576px) { 
+        margin-bottom: 30px;
+    }
+}
+
+#contact-me {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center
+}
+
+#footer{
+    margin-top: 50px;
+    padding-top: 70px;
+    padding-bottom: 50px;
+    background-color: #00A9FF;
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center
+}
+
+#resume {
+    margin-bottom: 20px;
+}
+
+#contact-me h2{
+    color: #89CFF3;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+#contact-me h3 {
+    color: #00A9FF;
+    margin-bottom: 30px;
+}
+
+#contact-me p {
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: #00A9FF;
+    color: white;
+    padding: 5px 20px 5px 20px;
+}
+
+.divider {
+    @media (max-width: 576px) {
+        margin-top: -80px;
+    }
+}
+
+#last-divider {
+    @media (max-width: 576px) { 
+        margin-bottom: -90px;
+    }
+}

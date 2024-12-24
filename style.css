@@ -196,12 +196,13 @@
 
 .divider {
     @media (max-width: 576px) {
-        margin-top: -80px;
+        margin-top: 80px;
     }
 }
 
 #last-divider {
     @media (max-width: 576px) { 
-        margin-bottom: -90px;
+        margin-top: 10px;
+        margin-bottom: -30px;
     }
 }

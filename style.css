@@ -1,51 +1,73 @@
 /* ==========================================================================
-   Mubeen Khan — personal site
-   Mobile first. Every base rule targets a phone; media queries only add.
-   One stylesheet, no build step, no framework. Edit it directly.
+   Mubeen Khan — personal site, second pass.
+
+   Mobile first: every base rule targets a phone, media queries only ever add
+   (min-width, never max-width).
+
+   The design brief in one line: the site is a work sample, not a description
+   of work, so it has to be evidence before it is argument. Hence real product
+   screens above the fold, real numbers instead of adjectives, and monospace
+   on every piece of metadata to signal engineer without saying it.
    ========================================================================== */
 
 :root {
-  --ink: #14161a;
-  --ink-soft: #4a5058;
-  --ink-faint: #797f89;
-  --paper: #fbfaf8;
+  --ink: #0d0f13;
+  --ink-soft: #474d57;
+  --ink-faint: #767d88;
+  --paper: #f7f5f1;
   --card: #ffffff;
-  --line: #e6e3dd;
-  --accent: #d9722c;
-  --accent-dark: #b85c1d;
-  --accent-wash: #fdf1e7;
-  --shadow: 0 1px 2px rgba(20, 22, 26, .05), 0 8px 24px rgba(20, 22, 26, .06);
+  --line: #e3ded5;
+  --line-strong: #cfc8bc;
 
-  --wrap: 1080px;
+  --accent: #e2622a;
+  --accent-dark: #bd4d1d;
+  --accent-wash: #fbeade;
+  --live: #1c7a41;
+  --live-wash: #e6f5ec;
+
+  --night: #0d0f13;
+  --night-soft: #1a1e25;
+  --night-line: #262b34;
+  --night-text: #c6cad2;
+
+  --shadow-sm: 0 1px 2px rgba(13, 15, 19, .06);
+  --shadow: 0 4px 12px rgba(13, 15, 19, .06), 0 18px 40px rgba(13, 15, 19, .08);
+  --shadow-lift: 0 8px 20px rgba(13, 15, 19, .1), 0 30px 60px rgba(13, 15, 19, .14);
+
+  --wrap: 1140px;
   --gap: 20px;
-  --radius: 14px;
+  --radius: 16px;
 
+  --display: "Bricolage Grotesque", "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
   --sans: "Instrument Sans", ui-sans-serif, system-ui, -apple-system,
           "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --ink: #f2f0ec;
-    --ink-soft: #b3b7bf;
-    --ink-faint: #8a8f98;
-    --paper: #101216;
-    --card: #191c22;
-    --line: #2a2e36;
-    --accent: #f0873a;
-    --accent-dark: #d9722c;
-    --accent-wash: #241a12;
-    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+    --ink: #f4f2ee;
+    --ink-soft: #b0b6bf;
+    --ink-faint: #868d97;
+    --paper: #0d0f13;
+    --card: #161a20;
+    --line: #262b34;
+    --line-strong: #39404b;
+    --accent: #f2793d;
+    --accent-dark: #e2622a;
+    --accent-wash: #241409;
+    --live: #5fcf8b;
+    --live-wash: #10241a;
+    --night-soft: #161a20;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4);
+    --shadow: 0 4px 12px rgba(0, 0, 0, .3), 0 18px 40px rgba(0, 0, 0, .35);
+    --shadow-lift: 0 8px 20px rgba(0, 0, 0, .4), 0 30px 60px rgba(0, 0, 0, .45);
   }
 }
 
 * { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  * { animation: none !important; transition: none !important; }
-}
 
 body {
   margin: 0;
@@ -55,11 +77,11 @@ body {
   font-size: 17px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  /* Room for the sticky mobile action bar. */
-  padding-bottom: 76px;
+  overflow-x: hidden;
+  padding-bottom: 78px; /* room for the sticky phone action bar */
 }
 
-@media (min-width: 760px) { body { padding-bottom: 0; } }
+@media (min-width: 800px) { body { padding-bottom: 0; } }
 
 img { max-width: 100%; display: block; }
 a { color: inherit; }
@@ -73,38 +95,46 @@ a { color: inherit; }
 
 /* --- type ---------------------------------------------------------------- */
 
-h1, h2, h3 {
-  line-height: 1.12;
-  letter-spacing: -0.022em;
-  margin: 0 0 .5em;
+h1, h2, h3, .display {
+  font-family: var(--display);
   font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin: 0 0 .5em;
 }
 
-h1 { font-size: clamp(2.1rem, 8.5vw, 3.9rem); }
-h2 { font-size: clamp(1.5rem, 5.5vw, 2.2rem); }
-h3 { font-size: 1.12rem; letter-spacing: -0.01em; }
+h1 { font-size: clamp(2.4rem, 10vw, 4.6rem); }
+h2 { font-size: clamp(1.75rem, 6.5vw, 2.9rem); }
+h3 { font-size: 1.16rem; letter-spacing: -0.02em; line-height: 1.2; }
 
 p { margin: 0 0 1.1em; }
 
 .lead {
-  font-size: clamp(1.02rem, 3.9vw, 1.22rem);
+  font-size: clamp(1.04rem, 4vw, 1.26rem);
   color: var(--ink-soft);
-  line-height: 1.55;
+  line-height: 1.5;
+}
+
+/* Monospace carries every label, number and status on the site. It is the
+   cheapest way to read as an engineer without a line of copy claiming it. */
+.mono, .eyebrow, .pill, .stat-n, .facts, .step-n, .badge {
+  font-family: var(--mono);
+  font-feature-settings: "tnum" 1;
 }
 
 .eyebrow {
-  font-size: .74rem;
-  font-weight: 600;
-  letter-spacing: .13em;
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--accent);
-  margin: 0 0 .9em;
+  margin: 0 0 1em;
 }
 
-.section { padding: 56px 0; }
-@media (min-width: 760px) { .section { padding: 88px 0; } }
+.section { padding: 64px 0; }
+@media (min-width: 800px) { .section { padding: 104px 0; } }
 
-.section-head { max-width: 620px; margin-bottom: 32px; }
+.section-head { max-width: 640px; margin-bottom: 40px; }
 
 /* --- header -------------------------------------------------------------- */
 
@@ -112,8 +142,8 @@ p { margin: 0 0 1.1em; }
   position: sticky;
   top: 0;
   z-index: 40;
-  background: color-mix(in srgb, var(--paper) 88%, transparent);
-  backdrop-filter: blur(10px);
+  background: color-mix(in srgb, var(--paper) 86%, transparent);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
 }
 
@@ -121,56 +151,135 @@ p { margin: 0 0 1.1em; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 58px;
+  min-height: 60px;
   gap: 12px;
 }
 
 .brand {
+  font-family: var(--display);
   font-weight: 700;
-  letter-spacing: -.02em;
+  letter-spacing: -.03em;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.05rem;
 }
 
 .brand span { color: var(--accent); }
 
-.nav {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  font-size: .92rem;
-}
-
-/* Two nav items hide on the narrowest phones so the header never wraps. */
+.nav { display: flex; align-items: center; gap: 20px; font-size: .9rem; }
 .nav a { text-decoration: none; color: var(--ink-soft); }
 .nav a:hover { color: var(--ink); }
 .nav .only-wide { display: none; }
-@media (min-width: 560px) { .nav .only-wide { display: inline; } }
+@media (min-width: 600px) { .nav .only-wide { display: inline; } }
 
 /* --- hero ---------------------------------------------------------------- */
 
 .hero {
-  background: #101216;
-  color: #f2f0ec;
-  padding: 52px 0 44px;
-  border-bottom: 1px solid #22262e;
+  background: var(--night);
+  color: #f4f2ee;
+  padding: 48px 0 0;
+  overflow: hidden;
 }
 
-@media (min-width: 760px) { .hero { padding: 96px 0 80px; } }
+@media (min-width: 960px) { .hero { padding: 84px 0 0; } }
 
-.hero h1 { color: #fff; max-width: 15ch; }
-.hero .lead { color: #b9bdc5; max-width: 46ch; }
+.hero-grid { display: grid; gap: 36px; align-items: center; }
+
+@media (min-width: 960px) {
+  .hero-grid { grid-template-columns: 1.05fr .95fr; gap: 48px; }
+}
+
+.hero h1 { color: #fff; max-width: 13ch; }
+.hero .lead { color: var(--night-text); max-width: 44ch; }
 .hero .eyebrow { color: var(--accent); }
 
 .hero-actions {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-top: 28px;
+  margin-top: 30px;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 460px) {
   .hero-actions { flex-direction: row; flex-wrap: wrap; align-items: center; }
+}
+
+/* Verifiable proof, immediately under the claim. Every badge is a link to a
+   live listing — one click to check, which builds trust even unclicked. */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 28px;
+  padding-bottom: 40px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 13px;
+  border-radius: 999px;
+  border: 1px solid var(--night-line);
+  background: rgba(255, 255, 255, .03);
+  font-size: .74rem;
+  letter-spacing: .01em;
+  color: var(--night-text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.badge:hover { border-color: #4a515d; color: #fff; }
+
+.badge::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--live);
+  flex: none;
+}
+
+.badge.soon::before { background: var(--accent); }
+
+/* --- the phone showcase -------------------------------------------------- */
+
+/* On a phone this is a swipeable strip: thumbs scroll sideways rather than
+   squinting at quarter-width images. On a desktop it fans out. */
+.showcase {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0 var(--gap) 44px;
+  margin-inline: calc(var(--gap) * -1);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.showcase::-webkit-scrollbar { display: none; }
+
+.showcase img {
+  width: 156px;
+  flex: none;
+  scroll-snap-align: center;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, .45);
+  background: #1a1e25;
+}
+
+@media (min-width: 960px) {
+  .showcase {
+    overflow: visible;
+    justify-content: center;
+    padding-bottom: 0;
+    margin: 0;
+    gap: 0;
+  }
+  .showcase img { width: 178px; margin-inline: -14px; }
+  .showcase img:nth-child(1) { transform: rotate(-7deg) translateY(16px); z-index: 1; }
+  .showcase img:nth-child(2) { transform: rotate(-2deg) translateY(-6px); z-index: 3; }
+  .showcase img:nth-child(3) { transform: rotate(4deg) translateY(10px); z-index: 2; }
+  .showcase img:nth-child(4) { transform: rotate(9deg) translateY(30px); z-index: 1; }
 }
 
 /* --- buttons ------------------------------------------------------------- */
@@ -180,9 +289,8 @@ p { margin: 0 0 1.1em; }
   align-items: center;
   justify-content: center;
   gap: 8px;
-  /* 48px tall: a thumb target, not a mouse target. */
-  min-height: 48px;
-  padding: 0 22px;
+  min-height: 50px;          /* a thumb target, not a mouse target */
+  padding: 0 24px;
   border-radius: 999px;
   border: 1px solid transparent;
   font: inherit;
@@ -190,7 +298,7 @@ p { margin: 0 0 1.1em; }
   font-size: .97rem;
   text-decoration: none;
   cursor: pointer;
-  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+  transition: transform .12s ease, background .14s ease, border-color .14s ease;
 }
 
 .btn:active { transform: translateY(1px); }
@@ -198,34 +306,103 @@ p { margin: 0 0 1.1em; }
 .btn-primary { background: var(--accent); color: #fff; }
 .btn-primary:hover { background: var(--accent-dark); }
 
-.btn-ghost {
-  background: transparent;
-  color: #f2f0ec;
-  border-color: #383d47;
-}
-.btn-ghost:hover { border-color: #5b6270; }
+.btn-ghost { background: transparent; color: #f4f2ee; border-color: #363c46; }
+.btn-ghost:hover { border-color: #5e6672; }
 
-.btn-line {
-  background: transparent;
-  color: var(--ink);
-  border-color: var(--line);
-}
+.btn-line { background: transparent; color: var(--ink); border-color: var(--line-strong); }
 .btn-line:hover { border-color: var(--ink-faint); }
 
-/* --- proof strip --------------------------------------------------------- */
+.btn-invert { background: var(--ink); color: var(--paper); }
+.btn-invert:hover { opacity: .88; }
 
-.proof {
-  margin-top: 34px;
-  padding-top: 22px;
-  border-top: 1px solid #22262e;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 20px;
-  font-size: .82rem;
-  color: #8f959f;
+/* --- numbers band -------------------------------------------------------- */
+
+/* Specificity is the highest-trust content available. Adjectives are not. */
+.numbers {
+  background: var(--night-soft);
+  border-top: 1px solid var(--night-line);
+  border-bottom: 1px solid var(--night-line);
+  padding: 26px 0;
 }
 
-.proof b { color: #d7dae0; font-weight: 600; }
+.numbers .wrap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px 16px;
+}
+
+@media (min-width: 700px) { .numbers .wrap { grid-template-columns: repeat(5, 1fr); } }
+
+.stat-n {
+  display: block;
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -.03em;
+}
+
+.stat-l {
+  display: block;
+  margin-top: 7px;
+  font-size: .78rem;
+  line-height: 1.35;
+  color: #8a919c;
+}
+
+/* --- featured project ---------------------------------------------------- */
+
+.featured {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 4px);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.featured-body { padding: 28px 22px; }
+@media (min-width: 900px) {
+  .featured { display: grid; grid-template-columns: 1fr 1fr; align-items: center; }
+  .featured-body { padding: 52px 48px; }
+}
+
+.featured-art {
+  background: linear-gradient(150deg, var(--accent-wash), var(--paper));
+  padding: 34px 22px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+}
+
+@media (min-width: 900px) {
+  .featured-art { border-top: 0; border-left: 1px solid var(--line); height: 100%; align-items: center; padding: 48px 32px; }
+}
+
+.featured-art img {
+  width: 132px;
+  border-radius: 14px;
+  box-shadow: var(--shadow-lift);
+  border: 1px solid var(--line);
+}
+.featured-art img:nth-child(1) { transform: rotate(-5deg); }
+.featured-art img:nth-child(2) { transform: rotate(4deg) translateY(14px); }
+
+.mini-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin: 22px 0 26px;
+}
+
+.mini-stats b {
+  font-family: var(--mono);
+  display: block;
+  font-size: 1.3rem;
+  letter-spacing: -.02em;
+}
+
+.mini-stats span { font-size: .78rem; color: var(--ink-faint); }
 
 /* --- cards --------------------------------------------------------------- */
 
@@ -235,9 +412,7 @@ p { margin: 0 0 1.1em; }
   .grid-2 { grid-template-columns: repeat(2, 1fr); }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
 }
-@media (min-width: 1000px) {
-  .grid-3 { grid-template-columns: repeat(3, 1fr); }
-}
+@media (min-width: 1020px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
 
 .card {
   background: var(--card);
@@ -246,28 +421,23 @@ p { margin: 0 0 1.1em; }
   padding: 22px;
 }
 
-/* Work cards are whole-card links. */
 a.card {
   text-decoration: none;
-  display: block;
-  transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
-}
-a.card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
-  border-color: var(--ink-faint);
+  display: flex;
+  flex-direction: column;
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
 }
 
-.card-top {
-  display: flex;
-  align-items: center;
-  gap: 13px;
-  margin-bottom: 14px;
+a.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  border-color: var(--line-strong);
 }
+
+.card-top { display: flex; align-items: center; gap: 13px; margin-bottom: 15px; }
 
 .app-icon {
-  width: 48px;
-  height: 48px;
+  width: 46px; height: 46px;
   border-radius: 11px;
   flex: none;
   object-fit: cover;
@@ -275,105 +445,144 @@ a.card:hover {
   background: var(--paper);
 }
 
-.card h3 { margin: 0 0 2px; }
-
-.card .meta { font-size: .82rem; color: var(--ink-faint); }
-.card p { font-size: .95rem; color: var(--ink-soft); margin-bottom: 14px; }
-
-.card .more {
-  font-size: .9rem;
-  font-weight: 600;
-  color: var(--accent);
-}
-
-/* Monogram tile for work that has no icon yet — a client system, an unreleased
-   game. Better than borrowing another product's artwork. */
-.app-icon.mono {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: .95rem;
-  letter-spacing: .02em;
+.app-icon.mono-tile {
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono);
+  font-weight: 700; font-size: .9rem;
   color: var(--accent);
   background: var(--accent-wash);
   border-color: color-mix(in srgb, var(--accent) 25%, transparent);
 }
 
-.case-head .app-icon.mono { font-size: 1.25rem; }
+.card h3 { margin: 0 0 3px; }
+.card .meta { font-size: .78rem; color: var(--ink-faint); font-family: var(--mono); }
+.card p { font-size: .94rem; color: var(--ink-soft); margin-bottom: 16px; }
+.card .spacer { flex: 1; }
+.card .more { font-size: .88rem; font-weight: 600; color: var(--accent); margin: 14px 0 0; }
 
 /* --- status pill --------------------------------------------------------- */
 
 .pill {
   display: inline-block;
-  font-size: .7rem;
-  font-weight: 700;
-  letter-spacing: .07em;
+  align-self: flex-start;
+  font-size: .68rem;
+  font-weight: 500;
+  letter-spacing: .08em;
   text-transform: uppercase;
-  padding: 4px 10px;
+  padding: 5px 11px;
   border-radius: 999px;
   background: var(--accent-wash);
   color: var(--accent-dark);
-  border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 26%, transparent);
 }
 
 .pill-live {
-  background: #e8f6ed;
-  color: #1c7a41;
-  border-color: #b6e3c7;
+  background: var(--live-wash);
+  color: var(--live);
+  border-color: color-mix(in srgb, var(--live) 30%, transparent);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .pill-live {
-    background: #12241a; color: #67d391; border-color: #204a30;
-  }
   :root:not([data-theme="light"]) .pill { color: var(--accent); }
 }
 
+/* --- how I work ---------------------------------------------------------- */
+
+/* The unspoken client fear is not "can he code", it is "will he vanish at
+   sixty percent". This section exists to answer that and nothing else. */
+.steps { counter-reset: step; display: grid; gap: 16px; }
+@media (min-width: 820px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+
+.step {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px 22px;
+}
+
+.step-n {
+  display: block;
+  font-size: .8rem;
+  color: var(--accent);
+  margin-bottom: 14px;
+  letter-spacing: .1em;
+}
+
+.step h3 { margin-bottom: 8px; }
+.step p { font-size: .93rem; color: var(--ink-soft); margin: 0; }
+
+/* --- candour note -------------------------------------------------------- */
+
+/* Volunteering a real limitation alongside real strength raises credibility
+   rather than lowering it, and it inoculates against finding it out later. */
+.candour {
+  border-left: 3px solid var(--accent);
+  padding: 4px 0 4px 20px;
+  margin: 40px 0 0;
+  max-width: 62ch;
+}
+
+.candour p { font-size: 1.04rem; color: var(--ink-soft); margin: 0; }
+.candour strong { color: var(--ink); }
+
 /* --- services ------------------------------------------------------------ */
 
-.service { border-left: 3px solid var(--accent); padding-left: 18px; }
-.service h3 { margin-bottom: 6px; }
-.service p { font-size: .95rem; color: var(--ink-soft); margin-bottom: 8px; }
-.service .proof-line { font-size: .84rem; color: var(--ink-faint); margin: 0; }
+.service { border-top: 2px solid var(--ink); padding-top: 18px; }
+.service h3 { margin-bottom: 8px; }
+.service p { font-size: .94rem; color: var(--ink-soft); margin-bottom: 10px; }
+.service .proof-line {
+  font-family: var(--mono);
+  font-size: .76rem;
+  color: var(--ink-faint);
+  margin: 0;
+  line-height: 1.5;
+}
 
 /* --- about --------------------------------------------------------------- */
 
-.about-grid { display: grid; gap: 26px; }
-@media (min-width: 760px) {
-  .about-grid { grid-template-columns: 200px 1fr; gap: 40px; align-items: start; }
+.about-grid { display: grid; gap: 28px; }
+@media (min-width: 800px) {
+  .about-grid { grid-template-columns: 220px 1fr; gap: 48px; align-items: start; }
 }
 
 .portrait {
-  width: 132px;
-  height: 132px;
+  width: 140px; height: 140px;
   border-radius: 50%;
   object-fit: cover;
   border: 1px solid var(--line);
 }
-@media (min-width: 760px) { .portrait { width: 200px; height: 200px; } }
+@media (min-width: 800px) { .portrait { width: 220px; height: 220px; border-radius: 20px; } }
 
 /* --- contact ------------------------------------------------------------- */
 
+/* Peak-end: the last thing on the page is disproportionately remembered, so
+   it gets the boldest treatment on the site. */
 .contact {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 28px 22px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: calc(var(--radius) + 6px);
+  padding: 36px 24px;
 }
-@media (min-width: 760px) { .contact { padding: 44px; } }
+@media (min-width: 800px) { .contact { padding: 64px 56px; } }
+
+.contact h2 { color: var(--paper); max-width: 16ch; }
+.contact .lead { color: color-mix(in srgb, var(--paper) 72%, transparent); }
+.contact .eyebrow { color: var(--accent); }
 
 .contact-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin: 24px 0 18px;
+  display: flex; flex-direction: column; gap: 10px;
+  margin: 30px 0 20px;
 }
-@media (min-width: 480px) { .contact-actions { flex-direction: row; flex-wrap: wrap; } }
+@media (min-width: 460px) { .contact-actions { flex-direction: row; flex-wrap: wrap; } }
 
-.small { font-size: .86rem; color: var(--ink-faint); }
+.contact .btn-line { color: var(--paper); border-color: color-mix(in srgb, var(--paper) 26%, transparent); }
+.contact .btn-line:hover { border-color: var(--paper); }
 
-/* --- sticky mobile CTA --------------------------------------------------- */
+.small { font-size: .85rem; color: var(--ink-faint); }
+.contact .small { color: color-mix(in srgb, var(--paper) 55%, transparent); }
+.contact .small a { color: color-mix(in srgb, var(--paper) 80%, transparent); }
+
+/* --- sticky phone bar ---------------------------------------------------- */
 
 .bar {
   position: fixed;
@@ -382,109 +591,116 @@ a.card:hover {
   display: flex;
   gap: 10px;
   padding: 10px var(--gap) calc(10px + env(safe-area-inset-bottom));
-  background: color-mix(in srgb, var(--paper) 92%, transparent);
-  backdrop-filter: blur(10px);
+  background: color-mix(in srgb, var(--paper) 93%, transparent);
+  backdrop-filter: blur(12px);
   border-top: 1px solid var(--line);
 }
 
-.bar .btn { flex: 1; }
-
-@media (min-width: 760px) { .bar { display: none; } }
+.bar .btn { flex: 1; min-height: 48px; }
+@media (min-width: 800px) { .bar { display: none; } }
 
 /* --- case study ---------------------------------------------------------- */
 
 .back {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: .9rem;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--mono);
+  font-size: .8rem;
   text-decoration: none;
   color: var(--ink-faint);
   min-height: 44px;
 }
 .back:hover { color: var(--ink); }
 
-.case-head { padding: 28px 0 8px; }
-
-.case-head .card-top { margin-bottom: 18px; }
+.case-head { padding: 20px 0 8px; }
+.case-head .card-top { margin-bottom: 20px; }
 .case-head .app-icon { width: 64px; height: 64px; border-radius: 15px; }
+.case-head .app-icon.mono-tile { font-size: 1.2rem; }
 
-.case-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 22px 0 8px;
-}
+.case-links { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0 8px; }
 
 .prose { max-width: 66ch; }
-.prose h2 { margin-top: 44px; }
+.prose h2 { margin-top: 52px; font-size: clamp(1.4rem, 5vw, 1.9rem); }
 .prose ul { padding-left: 20px; margin: 0 0 1.1em; }
-.prose li { margin-bottom: .5em; color: var(--ink-soft); }
+.prose li { margin-bottom: .6em; color: var(--ink-soft); }
 .prose strong { color: var(--ink); }
 
 .facts {
-  display: grid;
-  gap: 0;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
-  margin: 26px 0;
+  margin: 28px 0;
   background: var(--card);
+  font-size: .84rem;
 }
 
 .facts div {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
+  display: flex; justify-content: space-between; gap: 16px;
   padding: 13px 18px;
-  font-size: .92rem;
   border-bottom: 1px solid var(--line);
 }
 .facts div:last-child { border-bottom: 0; }
-.facts dt, .facts b { color: var(--ink-faint); font-weight: 500; }
-.facts span { text-align: right; font-weight: 600; }
+.facts b { color: var(--ink-faint); font-weight: 400; }
+.facts span { text-align: right; font-weight: 500; }
 
 .shots {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
   gap: 12px;
-  margin: 28px 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 4px var(--gap) 12px;
+  margin-inline: calc(var(--gap) * -1);
+  scrollbar-width: none;
 }
-@media (min-width: 700px) { .shots { grid-template-columns: repeat(4, 1fr); } }
+.shots::-webkit-scrollbar { display: none; }
 
 .shots img {
-  width: 100%;
-  border-radius: 10px;
+  width: 168px;
+  flex: none;
+  scroll-snap-align: center;
+  border-radius: 12px;
   border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
   background: var(--card);
 }
 
-.next {
-  border-top: 1px solid var(--line);
-  margin-top: 52px;
-  padding-top: 32px;
+@media (min-width: 800px) {
+  .shots { overflow: visible; margin: 0; padding: 0; flex-wrap: wrap; }
+  .shots img { width: 200px; }
 }
+
+.next { border-top: 1px solid var(--line); margin-top: 60px; padding-top: 36px; }
 
 /* --- footer -------------------------------------------------------------- */
 
 .site-foot {
   border-top: 1px solid var(--line);
-  padding: 32px 0 40px;
-  font-size: .88rem;
+  padding: 36px 0 44px;
+  font-size: .86rem;
   color: var(--ink-faint);
 }
 
 .site-foot a { color: var(--ink-soft); text-decoration: none; }
 .site-foot a:hover { color: var(--ink); }
+.foot-row { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-bottom: 14px; }
 
-.foot-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 18px;
-  margin-bottom: 12px;
+/* --- motion -------------------------------------------------------------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    transition-duration: .001ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
 }
 
-/* Focus is visible for everyone, always. */
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;

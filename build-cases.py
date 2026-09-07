@@ -90,7 +90,7 @@ CASES = [
         ],
         "links": [("Google Play", "https://play.google.com/store/apps/details?id=com.hushthem.app"),
                   ("hushthem.com", "https://hushthem.com")],
-        "shots": [],
+        "shots": ["hushthem-2.jpg", "hushthem-3.jpg", "hushthem-1.jpg"],
         "problem": [
             "Every call blocker works the same way: a blocklist of known spam "
             "numbers that grows forever and is always one step behind, because "
@@ -143,7 +143,7 @@ CASES = [
         ],
         "links": [("Google Play", "https://play.google.com/store/apps/details?id=com.flaris.app"),
                   ("flaris.beauty", "https://flaris.beauty")],
-        "shots": ["flaris-shot.png"],
+        "shots": ["flaris-1.jpg", "flaris-2.jpg", "flaris-3.jpg"],
         "problem": [
             "Makeup try-on already exists — but nearly all of it is built by "
             "brands, and it exists to sell you that brand's products. Point it "
@@ -223,8 +223,7 @@ CASES = [
         "slug": "riverside-files",
         "name": "Riverside Files",
         "kind": "Idle tycoon game · Android",
-        "icon": None,
-        "mono": "RF",
+        "icon": "riverside-icon.png",
         "status": ("pending", "In review for production"),
         "summary": "An idle detective-agency tycoon. Hire investigators, take "
                    "cases, grow the agency — and keep earning while the app is "
@@ -395,7 +394,7 @@ PAGE = """<!DOCTYPE html>
 <link rel="icon" href="../images/apps/adlib-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -506,7 +505,7 @@ def build():
             iconhtml = ('<img class="app-icon" src="../images/apps/%s" alt="" '
                         'width="64" height="64">' % c["icon"])
         else:
-            iconhtml = ('<div class="app-icon mono" aria-hidden="true">%s</div>'
+            iconhtml = ('<div class="app-icon mono-tile" aria-hidden="true">%s</div>'
                         % c.get("mono", "?"))
 
         links = "".join(

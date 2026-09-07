@@ -10,14 +10,14 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Mubeen Khan — I build software and get it published">
-<meta property="og:description" content="Six products live across Google Play, the Microsoft Store and the Chrome Web Store. Built, submitted and approved solo.">
+<meta property="og:description" content="Seven products across Google Play, the Microsoft Store and the Chrome Web Store. Built, submitted and approved solo.">
 <meta property="og:image" content="images/apps/spendpedia-icon.png">
 <meta name="twitter:card" content="summary">
 
 <link rel="icon" href="images/apps/adlib-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
 <script type="application/ld+json">
@@ -28,6 +28,7 @@
   "alternateName": "Mubeen Khan",
   "jobTitle": "Software Developer",
   "email": "mailto:mamubeenkhan@gmail.com",
+  "telephone": "+918328681249",
   "url": "https://mamubeenkhan.github.io/Personal-Website/",
   "sameAs": [
     "https://github.com/MAMubeenKhan",
@@ -45,8 +46,8 @@
     <a class="brand" href="index.html">Mubeen Khan<span>.</span></a>
     <nav class="nav">
       <a href="#work">Work</a>
+      <a class="only-wide" href="#process">How I work</a>
       <a class="only-wide" href="#services">Services</a>
-      <a class="only-wide" href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -54,75 +55,122 @@
 
 <section class="hero">
   <div class="wrap">
-    <p class="eyebrow">Freelance developer · India</p>
-    <h1>I build software and get it published.</h1>
-    <p class="lead">
-      Six products live across Google Play, the Microsoft Store and the Chrome
-      Web Store — designed, built, submitted and approved on my own. If you have
-      an idea, I can put a working build in your hands in days.
-    </p>
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Freelance developer · India</p>
+        <h1>I build software and get it published.</h1>
+        <p class="lead">
+          Seven products across Google Play, the Microsoft Store and the Chrome
+          Web Store — designed, built, submitted and approved on my own. Most
+          software never makes it out of the folder it was written in.
+        </p>
 
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="#contact">Start a project</a>
-      <a class="btn btn-ghost" href="#work">See the work</a>
-    </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Start a project</a>
+          <a class="btn btn-ghost" href="#work">See the work</a>
+        </div>
 
-    <div class="proof">
-      <span><b>4</b> app stores</span>
-      <span><b>6</b> products shipped</span>
-      <span><b>Flutter</b> · Android &amp; iOS</span>
-      <span><b>Windows</b> desktop</span>
-      <span><b>Chrome</b> extensions</span>
-      <span><b>Web</b> &amp; backend</span>
+        <div class="badges">
+          <a class="badge" href="https://play.google.com/store/apps/details?id=com.spendpedia.app" target="_blank" rel="noopener">Google Play · 3 live</a>
+          <a class="badge" href="https://apps.microsoft.com/detail/9p1tsjklw82w" target="_blank" rel="noopener">Microsoft Store · live</a>
+          <span class="badge soon">Chrome Web Store · in review</span>
+          <span class="badge soon">App Store · in progress</span>
+        </div>
+      </div>
+
+      <div class="showcase">
+        <img src="images/apps/spendpedia-1.jpg" alt="Spendpedia app screen" loading="eager">
+        <img src="images/apps/flaris-1.jpg" alt="Flaris app screen" loading="eager">
+        <img src="images/apps/hushthem-2.jpg" alt="HushThem app screen" loading="lazy">
+        <img src="images/apps/spendpedia-4.jpg" alt="Spendpedia analytics screen" loading="lazy">
+      </div>
     </div>
+  </div>
+</section>
+
+<section class="numbers">
+  <div class="wrap">
+    <div><span class="stat-n">7</span><span class="stat-l">products shipped</span></div>
+    <div><span class="stat-n">4</span><span class="stat-l">app stores</span></div>
+    <div><span class="stat-n">878</span><span class="stat-l">automated tests on one extension</span></div>
+    <div><span class="stat-n">700+</span><span class="stat-l">AR makeup procedures built</span></div>
+    <div><span class="stat-n">2,115</span><span class="stat-l">ads parsed where Meta showed 491</span></div>
   </div>
 </section>
 
 <section class="section" id="work">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <p class="eyebrow">Selected work</p>
-      <h2>Things that are actually live</h2>
+      <h2>Things you can download right now</h2>
       <p class="lead">
-        Not prototypes or course projects. Each of these went through a real
-        store review, with the privacy policies, data declarations and
-        rejections that come with it.
+        Not prototypes or course projects. Each went through a real store
+        review, with the privacy policies, data declarations and rejections
+        that come with it.
       </p>
     </div>
 
-    <div class="grid grid-3">
+    <!-- One featured piece before the grid. Seven items of equal weight makes
+         the visitor do the sorting; leading with one does it for them. -->
+    <a class="featured reveal" href="work/adlib.html" style="text-decoration:none">
+      <div class="featured-body">
+        <span class="pill">Chrome Web Store · in review</span>
+        <h2 style="margin:16px 0 12px">AdLib</h2>
+        <p class="lead" style="margin-bottom:0">
+          Meta's Ad Library holds every ad running on Facebook and cannot be
+          sorted, filtered or exported. This fixes that — entirely inside the
+          user's own browser, with no server ever touching Meta.
+        </p>
+
+        <div class="mini-stats">
+          <div><b>878</b><span>fixture tests</span></div>
+          <div><b>2,115</b><span>ads in one pass</span></div>
+          <div><b>0</b><span>server-side scraping</span></div>
+        </div>
+
+        <span class="btn btn-invert">Read the case study →</span>
+      </div>
+      <div class="featured-art">
+        <img src="images/apps/spendpedia-3.jpg" alt="" loading="lazy">
+        <img src="images/apps/flaris-2.jpg" alt="" loading="lazy">
+      </div>
+    </a>
+
+    <div class="grid grid-3 reveal" style="margin-top:14px">
 
       <a class="card" href="work/spendpedia.html">
         <div class="card-top">
-          <img class="app-icon" src="images/apps/spendpedia-icon.png" alt="" loading="lazy" width="48" height="48">
+          <img class="app-icon" src="images/apps/spendpedia-icon.png" alt="" loading="lazy" width="46" height="46">
           <div>
             <h3>Spendpedia</h3>
-            <div class="meta">Personal finance · Android</div>
+            <div class="meta">Finance · Android</div>
           </div>
         </div>
         <p>Expense tracking with voice entry, AI categorisation, budgets, cloud
            sync and CSV/PDF export. Free tier plus a premium subscription.</p>
+        <div class="spacer"></div>
         <span class="pill pill-live">Live on Google Play</span>
-        <p class="more" style="margin:14px 0 0">Read the case study →</p>
+        <p class="more">Read the case study →</p>
       </a>
 
       <a class="card" href="work/hushthem.html">
         <div class="card-top">
-          <img class="app-icon" src="images/apps/hushthem-icon.png" alt="" loading="lazy" width="48" height="48">
+          <img class="app-icon" src="images/apps/hushthem-icon.png" alt="" loading="lazy" width="46" height="46">
           <div>
             <h3>HushThem</h3>
             <div class="meta">Call control · Android</div>
           </div>
         </div>
         <p>Silences or auto-rejects every call except the people you whitelist.
-           All data stays on the device, with biometric lock and a night mode.</p>
+           All data stays on the device, with biometric lock and night mode.</p>
+        <div class="spacer"></div>
         <span class="pill pill-live">Live on Google Play</span>
-        <p class="more" style="margin:14px 0 0">Read the case study →</p>
+        <p class="more">Read the case study →</p>
       </a>
 
       <a class="card" href="work/flaris.html">
         <div class="card-top">
-          <img class="app-icon" src="images/apps/flaris-icon.png" alt="" loading="lazy" width="48" height="48">
+          <img class="app-icon" src="images/apps/flaris-icon.png" alt="" loading="lazy" width="46" height="46">
           <div>
             <h3>Flaris</h3>
             <div class="meta">AR beauty · Android</div>
@@ -130,125 +178,159 @@
         </div>
         <p>Augmented-reality makeup try-on with over 700 guided looks, matched
            to skin tone and face shape and usable with any brand.</p>
+        <div class="spacer"></div>
         <span class="pill pill-live">Live on Google Play</span>
-        <p class="more" style="margin:14px 0 0">Read the case study →</p>
+        <p class="more">Read the case study →</p>
       </a>
 
       <a class="card" href="work/cuepaste.html">
         <div class="card-top">
-          <img class="app-icon" src="images/apps/cuepaste-icon.png" alt="" loading="lazy" width="48" height="48">
+          <img class="app-icon" src="images/apps/cuepaste-icon.png" alt="" loading="lazy" width="46" height="46">
           <div>
             <h3>CuePaste</h3>
             <div class="meta">Productivity · Windows</div>
           </div>
         </div>
-        <p>A sequential clipboard queue for Windows. Copy several things in
-           order, paste them back one at a time, in the same order.</p>
+        <p>A sequential clipboard queue. Copy several things in order, paste
+           them back one at a time, in that order.</p>
+        <div class="spacer"></div>
         <span class="pill pill-live">Live on Microsoft Store</span>
-        <p class="more" style="margin:14px 0 0">Read the case study →</p>
+        <p class="more">Read the case study →</p>
       </a>
 
       <a class="card" href="work/riverside-files.html">
         <div class="card-top">
-          <div class="app-icon mono" aria-hidden="true">RF</div>
+          <img class="app-icon" src="images/apps/riverside-icon.png" alt="" loading="lazy" width="46" height="46">
           <div>
             <h3>Riverside Files</h3>
-            <div class="meta">Idle tycoon game · Android</div>
+            <div class="meta">Idle game · Android</div>
           </div>
         </div>
-        <p>An idle detective-agency tycoon. Hire investigators, take cases, grow
-           the agency — and keep earning while the app is shut.</p>
+        <p>An idle detective-agency tycoon. Hire investigators, take cases,
+           grow the agency — and keep earning while the app is shut.</p>
+        <div class="spacer"></div>
         <span class="pill">In review for production</span>
-        <p class="more" style="margin:14px 0 0">Read the case study →</p>
+        <p class="more">Read the case study →</p>
       </a>
 
       <a class="card" href="work/gym-management.html">
         <div class="card-top">
-          <div class="app-icon mono" aria-hidden="true">GM</div>
+          <div class="app-icon mono-tile" aria-hidden="true">GM</div>
           <div>
-            <h3>Gym management system</h3>
-            <div class="meta">Client work · Windows desktop</div>
+            <h3>Gym management</h3>
+            <div class="meta">Client work · Windows</div>
           </div>
         </div>
-        <p>Members, plans, attendance and billing for a working gym. Built to
-           a paying client's brief, being delivered now.</p>
+        <p>Members, plans, attendance and billing for a working gym. Built to a
+           paying client's brief, being delivered now.</p>
+        <div class="spacer"></div>
         <span class="pill">In delivery</span>
-        <p class="more" style="margin:14px 0 0">Read the case study →</p>
-      </a>
-
-      <a class="card" href="work/adlib.html">
-        <div class="card-top">
-          <img class="app-icon" src="images/apps/adlib-icon.png" alt="" loading="lazy" width="48" height="48">
-          <div>
-            <h3>AdLib</h3>
-            <div class="meta">Chrome extension · MV3</div>
-          </div>
-        </div>
-        <p>Makes the Meta Ad Library usable — sortable, filterable, exportable.
-           The most technically demanding thing on this page.</p>
-        <span class="pill">In store review</span>
-        <p class="more" style="margin:14px 0 0">Read the case study →</p>
+        <p class="more">Read the case study →</p>
       </a>
 
     </div>
 
-    <p class="small" style="margin-top:22px">
-      Also in progress: iOS builds of the Flutter apps, heading to the App Store.
-    </p>
+    <!-- Volunteering the limitation is what makes the rest of the page
+         believable, and it removes the sting of finding it out later. -->
+    <div class="candour reveal">
+      <p>
+        <strong>Straight answer before you ask:</strong> most of these are my
+        own products, and they have not made money yet. What they prove is not
+        that I can market — it is that I finish things and get them past
+        review. That is the part your project needs.
+      </p>
+    </div>
   </div>
 </section>
 
-<section class="section" id="services" style="background:var(--card);border-block:1px solid var(--line)">
+<section class="section" id="process" style="background:var(--card);border-block:1px solid var(--line)">
   <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">What I do for clients</p>
-      <h2>Four things, each one already proven</h2>
+    <div class="section-head reveal">
+      <p class="eyebrow">How I work</p>
+      <h2>The real risk is someone disappearing at 60%</h2>
       <p class="lead">
-        Every service below names the shipped product that proves I can do it.
-        That is the whole point of the list.
+        It is why most people hesitate, and nobody says it out loud. So here is
+        how I take it off the table.
       </p>
     </div>
 
-    <div class="grid grid-2">
+    <div class="steps reveal">
+      <div class="step">
+        <span class="step-n">01</span>
+        <h3>You describe it</h3>
+        <p>A paragraph is enough. What it should do, who it is for. I will tell
+           you honestly if I am the wrong person — that answer costs you a day
+           instead of a month.</p>
+      </div>
+      <div class="step">
+        <span class="step-n">02</span>
+        <h3>Fixed scope, fixed price</h3>
+        <p>Within 48 hours you get written scope and a fixed number, not an
+           hourly estimate that grows. If the scope changes later, we agree the
+           change before it gets built.</p>
+      </div>
+      <div class="step">
+        <span class="step-n">03</span>
+        <h3>A build you can run, weekly</h3>
+        <p>Every week you get something installable, not a progress report. You
+           see the real thing early enough to change your mind while changing it
+           is still cheap.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">What I do</p>
+      <h2>Four things, each one already shipped</h2>
+      <p class="lead">
+        Every line below names the published product that proves it. That is
+        the whole point of the list.
+      </p>
+    </div>
+
+    <div class="grid grid-2 reveal">
       <div class="service">
         <h3>Mobile apps, idea to store</h3>
-        <p>Flutter for Android and iOS. Design, build, store listing, privacy
-           policy, data-safety declaration, submission and the review
-           back-and-forth — the whole way to published, not just to a build file.</p>
-        <p class="proof-line">Proven by Spendpedia, HushThem and Flaris.</p>
+        <p>Flutter for Android and iOS. Design, build, listing, privacy policy,
+           data-safety declaration, submission and the review back-and-forth —
+           the whole way to published, not just to a build file.</p>
+        <p class="proof-line">→ Spendpedia · HushThem · Flaris · Riverside Files</p>
       </div>
 
       <div class="service">
         <h3>Windows desktop software</h3>
         <p>Internal tools and business software that runs offline on a real
-           machine in a real office. Installers, updates and Microsoft Store
+           machine in a real office. Installers, updates, and Microsoft Store
            publishing if you want it there.</p>
-        <p class="proof-line">Proven by CuePaste and a gym management system.</p>
+        <p class="proof-line">→ CuePaste · gym management system</p>
       </div>
 
       <div class="service">
         <h3>Browser extensions and tools</h3>
-        <p>Chrome MV3 extensions, scrapers and automation for workflows the
-           browser makes painful. Including the awkward parts: content-script
-           isolation, permissions review and store policy.</p>
-        <p class="proof-line">Proven by AdLib, a Meta Ad Library extension.</p>
+        <p>Chrome MV3 extensions and automation for workflows the browser makes
+           painful — including the awkward parts: content-script isolation,
+           permission justifications, store policy.</p>
+        <p class="proof-line">→ AdLib, a Meta Ad Library extension</p>
       </div>
 
       <div class="service">
         <h3>AI features inside your product</h3>
         <p>LLM logic built into something that already exists — categorisation,
-           extraction, chat, summarisation. Scoped so it fails gracefully
-           instead of confidently making things up.</p>
-        <p class="proof-line">Proven by Spendpedia's voice entry and auto-categorisation.</p>
+           extraction, chat, summarisation. Scoped so it fails visibly instead
+           of confidently making things up.</p>
+        <p class="proof-line">→ Spendpedia voice entry and auto-categorisation</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="about">
+<section class="section" id="about" style="background:var(--card);border-block:1px solid var(--line)">
   <div class="wrap">
-    <div class="about-grid">
-      <img class="portrait" src="images/mubeen.png" width="200" height="200" alt="Mubeen Khan" loading="lazy">
+    <div class="about-grid reveal">
+      <img class="portrait" src="images/mubeen.png" alt="Mubeen Khan" width="220" height="220" loading="lazy">
       <div>
         <p class="eyebrow">About</p>
         <h2>Most software never gets published. Mine does.</h2>
@@ -264,10 +346,9 @@
           and I know what each of them asks for before it asks.
         </p>
         <p>
-          I work fast — AI tooling is a large part of how, and I review
-          everything that ships — but speed is not the point. Finishing is. You
-          can download five of the things on this page right now, which is a
-          claim most freelance profiles cannot make.
+          I work fast, and AI tooling is a large part of how — but I read
+          everything that ships, because the person who has to fix it in month
+          six is me. Speed is not the pitch. Finishing is.
         </p>
       </div>
     </div>
@@ -276,13 +357,13 @@
 
 <section class="section" id="contact">
   <div class="wrap">
-    <div class="contact">
+    <div class="contact reveal">
       <p class="eyebrow">Get in touch</p>
       <h2>Tell me what you want built</h2>
-      <p class="lead" style="max-width:52ch">
-        A paragraph is enough to start. Tell me what it should do and who it is
-        for, and I will tell you honestly whether I am the right person, what it
-        would take, and roughly what it would cost.
+      <p class="lead" style="max-width:50ch">
+        A paragraph is enough to start. I will tell you honestly whether I am
+        the right person, what it would take, and roughly what it would cost —
+        before you have committed to anything.
       </p>
 
       <div class="contact-actions">
@@ -290,7 +371,7 @@
         <a class="btn btn-line" href="https://wa.me/918328681249" target="_blank" rel="noopener">WhatsApp</a>
       </div>
 
-      <p class="small">
+      <p class="small" style="margin:0">
         mamubeenkhan@gmail.com · +91 83286 81249 · I reply within one working day.
         I also take work through
         <a href="https://www.upwork.com/freelancers/~01b1a4192e5a8aa284" target="_blank" rel="noopener">Upwork</a>
@@ -304,8 +385,8 @@
   <div class="wrap">
     <div class="foot-row">
       <a href="#work">Work</a>
+      <a href="#process">How I work</a>
       <a href="#services">Services</a>
-      <a href="#about">About</a>
       <a href="#contact">Contact</a>
       <a href="https://github.com/MAMubeenKhan" target="_blank" rel="noopener">GitHub</a>
       <a href="https://www.upwork.com/freelancers/~01b1a4192e5a8aa284" target="_blank" rel="noopener">Upwork</a>
@@ -319,6 +400,25 @@
   <a class="btn btn-primary" href="mailto:mamubeenkhan@gmail.com?subject=Project%20enquiry">Email me</a>
 </div>
 
-<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+<script>
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+// Scroll reveal. Anything never observed stays visible, so a failure here can
+// never hide content.
+(function () {
+  var els = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window) ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    els.forEach(function (el) { el.classList.add("in"); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+    });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+  els.forEach(function (el) { io.observe(el); });
+})();
+</script>
 </body>
 </html>

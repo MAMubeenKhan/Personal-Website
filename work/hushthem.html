@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HushThem — Mubeen Khan</title>
+<meta name="description" content="Spam-call blockers play catch-up with a list that never ends. This one inverts it: nobody rings unless you said they could.">
+<meta property="og:title" content="HushThem — Mubeen Khan">
+<meta property="og:description" content="Spam-call blockers play catch-up with a list that never ends. This one inverts it: nobody rings unless you said they could.">
+<link rel="icon" href="../images/apps/adlib-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Mubeen Khan<span>.</span></a>
+    <nav class="nav">
+      <a href="../index.html#work">Work</a>
+      <a class="only-wide" href="../index.html#services">Services</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="case-head">
+    <a class="back" href="../index.html#work">← All work</a>
+    <div class="card-top">
+      <img class="app-icon" src="../images/apps/hushthem-icon.png" alt="" width="64" height="64">
+      <div>
+        <h3 style="font-size:1rem;color:var(--ink-faint);font-weight:500;margin:0">Call control · Android</h3>
+      </div>
+    </div>
+    <h1>HushThem</h1>
+    <p class="lead">Spam-call blockers play catch-up with a list that never ends. This one inverts it: nobody rings unless you said they could.</p>
+    <p><span class="pill pill-live">Live on Google Play</span></p>
+    <div class="case-links"><a class="btn btn-line" href="https://play.google.com/store/apps/details?id=com.hushthem.app" target="_blank" rel="noopener">Google Play ↗</a><a class="btn btn-line" href="https://hushthem.com" target="_blank" rel="noopener">hushthem.com ↗</a></div>
+  </div>
+
+  <div class="facts">
+    <div><b>Platform</b><span>Android 10+</span></div>
+    <div><b>Stack</b><span>Flutter, Android telephony APIs</span></div>
+    <div><b>Role</b><span>Everything — design, build, permissions review, submission</span></div>
+    <div><b>Model</b><span>Free</span></div>
+  </div>
+
+  
+
+  <div class="prose">
+    <h2>The problem</h2>
+    <p>Every call blocker works the same way: a blocklist of known spam numbers that grows forever and is always one step behind, because the next call comes from a number nobody has reported yet.</p>
+    <p>But most people do not want to block a list. They want the opposite — during a meeting, a shift, or the night, they want the phone silent for everyone except a handful of people who genuinely matter.</p>
+
+    <h2>What I built</h2>
+    <ul>
+      <li><strong>Whitelist-first.</strong> Pick who is allowed through. Everyone else is silenced or auto-rejected, your choice. There is no list to maintain and no catching up to do.</li>
+      <li><strong>Night mode.</strong> Stricter blocking on a schedule, so the setting does not have to be remembered at bedtime.</li>
+      <li><strong>Call analytics.</strong> What was blocked and what was missed, so the app can be trusted rather than just believed — anyone handing over their calls wants to verify nothing important vanished.</li>
+      <li><strong>Nothing leaves the phone.</strong> All data stays on the device, with an optional biometric lock.</li>
+    </ul>
+
+    <h2>The part that was actually hard</h2>
+    <p>Call and phone-state permissions are among the most restricted on Google Play. Requesting them means declaring exactly why, demonstrating the core function genuinely requires them, and accepting that a weak justification is rejected outright. Plenty of call apps never make it out of that queue.</p>
+    <p>Getting silencing to behave identically across Android versions and manufacturer skins is unglamorous, fiddly work, and it is the difference between an app that works and one that works on the developer's own phone.</p>
+
+    <h2>Where it is now</h2>
+    <p>Live on Google Play, free, on Android 10 and up. There is a partner programme on the site for anyone who wants to promote it.</p>
+  </div>
+
+  <div class="next">
+    <p class="eyebrow">Next</p>
+    <h2 style="margin-bottom:18px"><a href="flaris.html" style="text-decoration:none">Flaris →</a></h2>
+    <p class="lead" style="margin-bottom:26px">Or tell me what you want built.</p>
+    <div class="contact-actions" style="margin:0">
+      <a class="btn btn-primary" href="mailto:mamubeenkhan@gmail.com?subject=Project%20enquiry">Email me</a>
+      <a class="btn btn-line" href="https://wa.me/918328681249" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-row">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#contact">Contact</a>
+      <a href="https://github.com/MAMubeenKhan" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <p style="margin:0">© <span id="yr">2026</span> Mohammed Abdul Mubeen Khan</p>
+  </div>
+</footer>
+
+<div class="bar">
+  <a class="btn btn-line" href="https://wa.me/918328681249" target="_blank" rel="noopener">WhatsApp</a>
+  <a class="btn btn-primary" href="mailto:mamubeenkhan@gmail.com?subject=Project%20enquiry">Email me</a>
+</div>
+
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Riverside Files — Mubeen Khan</title>
+<meta name="description" content="An idle detective-agency tycoon. Hire investigators, take cases, grow the agency — and keep earning while the app is shut.">
+<meta property="og:title" content="Riverside Files — Mubeen Khan">
+<meta property="og:description" content="An idle detective-agency tycoon. Hire investigators, take cases, grow the agency — and keep earning while the app is shut.">
+<link rel="icon" href="../images/apps/adlib-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Mubeen Khan<span>.</span></a>
+    <nav class="nav">
+      <a href="../index.html#work">Work</a>
+      <a class="only-wide" href="../index.html#services">Services</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="case-head">
+    <a class="back" href="../index.html#work">← All work</a>
+    <div class="card-top">
+      <div class="app-icon mono" aria-hidden="true">RF</div>
+      <div>
+        <h3 style="font-size:1rem;color:var(--ink-faint);font-weight:500;margin:0">Idle tycoon game · Android</h3>
+      </div>
+    </div>
+    <h1>Riverside Files</h1>
+    <p class="lead">An idle detective-agency tycoon. Hire investigators, take cases, grow the agency — and keep earning while the app is shut.</p>
+    <p><span class="pill ">In review for production</span></p>
+    
+  </div>
+
+  <div class="facts">
+    <div><b>Platform</b><span>Android, iOS planned</span></div>
+    <div><b>Stack</b><span>Flutter</span></div>
+    <div><b>Role</b><span>Everything — design, systems, balancing, build</span></div>
+    <div><b>Status</b><span>Awaiting production access on Google Play</span></div>
+  </div>
+
+  
+
+  <div class="prose">
+    <h2>The problem</h2>
+    <p>Idle games look simple and are the opposite. The genre lives or dies on an economy that stays interesting for weeks — fast enough in the first ten minutes that a player comes back tomorrow, slow enough at hour twenty that progress still means something.</p>
+    <p>The detective-agency setting gives that curve a reason to exist: cases, investigators and an agency that grows are a natural fit for hiring, upgrading and unlocking.</p>
+
+    <h2>What I built</h2>
+    <ul>
+      <li><strong>An idle economy that runs while closed.</strong> Offline progression has to be computed on return rather than simulated tick by tick — get it wrong and players either lose earnings they were promised or find an exploit and stop playing.</li>
+      <li><strong>Agency progression.</strong> Investigators to hire, cases to take, upgrades that change the shape of the curve rather than just multiplying it.</li>
+      <li><strong>Built in Flutter</strong>, same as the rest of my mobile work, which is how a solo developer ships a game and three utility apps without maintaining separate toolchains.</li>
+    </ul>
+
+    <h2>The part that was actually hard</h2>
+    <p>Balancing is the whole job. Every number interacts with every other number, and the only honest way to tune it is to play it, repeatedly, at different stages.</p>
+    <p>Google Play now requires new personal developer accounts to run a closed test before production access is granted. That is a real gate with real testers and a real waiting period, and it is where the game currently sits.</p>
+
+    <h2>Where it is now</h2>
+    <p>In review for production access on Google Play.</p>
+  </div>
+
+  <div class="next">
+    <p class="eyebrow">Next</p>
+    <h2 style="margin-bottom:18px"><a href="gym-management.html" style="text-decoration:none">Gym management system →</a></h2>
+    <p class="lead" style="margin-bottom:26px">Or tell me what you want built.</p>
+    <div class="contact-actions" style="margin:0">
+      <a class="btn btn-primary" href="mailto:mamubeenkhan@gmail.com?subject=Project%20enquiry">Email me</a>
+      <a class="btn btn-line" href="https://wa.me/918328681249" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-row">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#contact">Contact</a>
+      <a href="https://github.com/MAMubeenKhan" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <p style="margin:0">© <span id="yr">2026</span> Mohammed Abdul Mubeen Khan</p>
+  </div>
+</footer>
+
+<div class="bar">
+  <a class="btn btn-line" href="https://wa.me/918328681249" target="_blank" rel="noopener">WhatsApp</a>
+  <a class="btn btn-primary" href="mailto:mamubeenkhan@gmail.com?subject=Project%20enquiry">Email me</a>
+</div>
+
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+</body>
+</html>

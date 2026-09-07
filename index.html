@@ -1,60 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mubeen Khan</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mubeen Khan — I build software and get it published</title>
+<meta name="description" content="Freelance developer shipping production software across Google Play, the Microsoft Store and the Chrome Web Store. Flutter apps, Windows desktop software, browser extensions and web tools — built and published solo.">
+<meta name="author" content="Mohammed Abdul Mubeen Khan">
+<link rel="canonical" href="https://mamubeenkhan.github.io/Personal-Website/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mubeen Khan — I build software and get it published">
+<meta property="og:description" content="Six products live across Google Play, the Microsoft Store and the Chrome Web Store. Built, submitted and approved solo.">
+<meta property="og:image" content="images/apps/spendpedia-icon.png">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="images/apps/adlib-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mohammed Abdul Mubeen Khan",
+  "alternateName": "Mubeen Khan",
+  "jobTitle": "Software Developer",
+  "email": "mailto:mamubeenkhan@gmail.com",
+  "url": "https://mamubeenkhan.github.io/Personal-Website/",
+  "sameAs": [
+    "https://github.com/MAMubeenKhan",
+    "https://www.upwork.com/freelancers/~01b1a4192e5a8aa284"
+  ],
+  "knowsAbout": ["Flutter", "Android development", "Windows desktop software",
+                 "Chrome extensions", "Web development", "AI integration"]
+}
+</script>
 </head>
 <body>
 
-    <section id="hero">
-        <div class="container">
-            <h1 id="myname">I am Mubeen</h1>
-            <p>Designer & Programmer</p>
-            <img id="designing" src="./images/DesigningLaptop.png" alt="DesigningLaptop" height="200px"/>
-            <img id="coding" src="./images/CodingLaptop.png" alt="CodingLaptop" height="200px"/>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">Mubeen Khan<span>.</span></a>
+    <nav class="nav">
+      <a href="#work">Work</a>
+      <a class="only-wide" href="#services">Services</a>
+      <a class="only-wide" href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Freelance developer · India</p>
+    <h1>I build software and get it published.</h1>
+    <p class="lead">
+      Six products live across Google Play, the Microsoft Store and the Chrome
+      Web Store — designed, built, submitted and approved on my own. If you have
+      an idea, I can put a working build in your hands in days.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#contact">Start a project</a>
+      <a class="btn btn-ghost" href="#work">See the work</a>
+    </div>
+
+    <div class="proof">
+      <span><b>4</b> app stores</span>
+      <span><b>6</b> products shipped</span>
+      <span><b>Flutter</b> · Android &amp; iOS</span>
+      <span><b>Windows</b> desktop</span>
+      <span><b>Chrome</b> extensions</span>
+      <span><b>Web</b> &amp; backend</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Selected work</p>
+      <h2>Things that are actually live</h2>
+      <p class="lead">
+        Not prototypes or course projects. Each of these went through a real
+        store review, with the privacy policies, data declarations and
+        rejections that come with it.
+      </p>
+    </div>
+
+    <div class="grid grid-3">
+
+      <a class="card" href="work/spendpedia.html">
+        <div class="card-top">
+          <img class="app-icon" src="images/apps/spendpedia-icon.png" alt="" loading="lazy" width="48" height="48">
+          <div>
+            <h3>Spendpedia</h3>
+            <div class="meta">Personal finance · Android</div>
+          </div>
         </div>
-    </section>
+        <p>Expense tracking with voice entry, AI categorisation, budgets, cloud
+           sync and CSV/PDF export. Free tier plus a premium subscription.</p>
+        <span class="pill pill-live">Live on Google Play</span>
+        <p class="more" style="margin:14px 0 0">Read the case study →</p>
+      </a>
 
-    <section id="about-me">
-        <div class="container">
-            <img id="my-photo" src="./images/Mubeen's photo.png" alt="Mubeen's Photo"/>
-            <h2>Hey!</h2>
-            <p>I'm a full stack Web Developer and Web Designer. I create beautiful,<br/> functional websites that deliver great user experiences and bring ideas to life online.</p>
-            <img class="divider" src="./images/divider-7617016_1280.png" alt="divider" height="50px" width="200px"/>
+      <a class="card" href="work/hushthem.html">
+        <div class="card-top">
+          <img class="app-icon" src="images/apps/hushthem-icon.png" alt="" loading="lazy" width="48" height="48">
+          <div>
+            <h3>HushThem</h3>
+            <div class="meta">Call control · Android</div>
+          </div>
         </div>
-    </section>
+        <p>Silences or auto-rejects every call except the people you whitelist.
+           All data stays on the device, with biometric lock and a night mode.</p>
+        <span class="pill pill-live">Live on Google Play</span>
+        <p class="more" style="margin:14px 0 0">Read the case study →</p>
+      </a>
 
-    <section id="projects">
-        <div class="container">
-            <h2>My Projects</h2>
-            <p>Click the image below to view my Resume Project</p>
-            <a href="https://mamubeenkhan.github.io/Resume/"><img id="resume" src="./images/Resume.png" alt="Resume Project Screenshot"/></a>
-            <p>Click the image below to view my HTML Portfolio</p>
-            <a href="https://mamubeenkhan.github.io/html-portfolio/"><img id="portfolio" id="html-portfolio" src="./images/HTML-Portfolio.png" height="200px" alt="HTML portfolio Screenshot"/></a>
-            <br/>
-            <img class="divider" id="last-divider" src="./images/divider-7617016_1280.png" alt="divider" height="50px" width="200px"/>
+      <a class="card" href="work/flaris.html">
+        <div class="card-top">
+          <img class="app-icon" src="images/apps/flaris-icon.png" alt="" loading="lazy" width="48" height="48">
+          <div>
+            <h3>Flaris</h3>
+            <div class="meta">AR beauty · Android</div>
+          </div>
         </div>
-    </section>
+        <p>Augmented-reality makeup try-on with over 700 guided looks, matched
+           to skin tone and face shape and usable with any brand.</p>
+        <span class="pill pill-live">Live on Google Play</span>
+        <p class="more" style="margin:14px 0 0">Read the case study →</p>
+      </a>
 
-    <section id="contact-me">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <h3>Have a project in mind or need a website that stands out?</h3>
-            <p>Feel free to reach out! I’m always excited to collaborate on new ideas and bring your vision to life. Let’s create something amazing together!</p>
-            <a class="btn" href="mailto:mamubeenkhan@gmail.com">CONTACT ME</a>
+      <a class="card" href="work/cuepaste.html">
+        <div class="card-top">
+          <img class="app-icon" src="images/apps/cuepaste-icon.png" alt="" loading="lazy" width="48" height="48">
+          <div>
+            <h3>CuePaste</h3>
+            <div class="meta">Productivity · Windows</div>
+          </div>
         </div>
-    </section>
+        <p>A sequential clipboard queue for Windows. Copy several things in
+           order, paste them back one at a time, in the same order.</p>
+        <span class="pill pill-live">Live on Microsoft Store</span>
+        <p class="more" style="margin:14px 0 0">Read the case study →</p>
+      </a>
 
-    <footer id="footer">
-        <p>© Mohammed Abdul Mubeen Khan</p>
-    </footer>
+      <a class="card" href="work/riverside-files.html">
+        <div class="card-top">
+          <div class="app-icon mono" aria-hidden="true">RF</div>
+          <div>
+            <h3>Riverside Files</h3>
+            <div class="meta">Idle tycoon game · Android</div>
+          </div>
+        </div>
+        <p>An idle detective-agency tycoon. Hire investigators, take cases, grow
+           the agency — and keep earning while the app is shut.</p>
+        <span class="pill">In review for production</span>
+        <p class="more" style="margin:14px 0 0">Read the case study →</p>
+      </a>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      <a class="card" href="work/gym-management.html">
+        <div class="card-top">
+          <div class="app-icon mono" aria-hidden="true">GM</div>
+          <div>
+            <h3>Gym management system</h3>
+            <div class="meta">Client work · Windows desktop</div>
+          </div>
+        </div>
+        <p>Members, plans, attendance and billing for a working gym. Built to
+           a paying client's brief, being delivered now.</p>
+        <span class="pill">In delivery</span>
+        <p class="more" style="margin:14px 0 0">Read the case study →</p>
+      </a>
+
+      <a class="card" href="work/adlib.html">
+        <div class="card-top">
+          <img class="app-icon" src="images/apps/adlib-icon.png" alt="" loading="lazy" width="48" height="48">
+          <div>
+            <h3>AdLib</h3>
+            <div class="meta">Chrome extension · MV3</div>
+          </div>
+        </div>
+        <p>Makes the Meta Ad Library usable — sortable, filterable, exportable.
+           The most technically demanding thing on this page.</p>
+        <span class="pill">In store review</span>
+        <p class="more" style="margin:14px 0 0">Read the case study →</p>
+      </a>
+
+    </div>
+
+    <p class="small" style="margin-top:22px">
+      Also in progress: iOS builds of the Flutter apps, heading to the App Store.
+    </p>
+  </div>
+</section>
+
+<section class="section" id="services" style="background:var(--card);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What I do for clients</p>
+      <h2>Four things, each one already proven</h2>
+      <p class="lead">
+        Every service below names the shipped product that proves I can do it.
+        That is the whole point of the list.
+      </p>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="service">
+        <h3>Mobile apps, idea to store</h3>
+        <p>Flutter for Android and iOS. Design, build, store listing, privacy
+           policy, data-safety declaration, submission and the review
+           back-and-forth — the whole way to published, not just to a build file.</p>
+        <p class="proof-line">Proven by Spendpedia, HushThem and Flaris.</p>
+      </div>
+
+      <div class="service">
+        <h3>Windows desktop software</h3>
+        <p>Internal tools and business software that runs offline on a real
+           machine in a real office. Installers, updates and Microsoft Store
+           publishing if you want it there.</p>
+        <p class="proof-line">Proven by CuePaste and a gym management system.</p>
+      </div>
+
+      <div class="service">
+        <h3>Browser extensions and tools</h3>
+        <p>Chrome MV3 extensions, scrapers and automation for workflows the
+           browser makes painful. Including the awkward parts: content-script
+           isolation, permissions review and store policy.</p>
+        <p class="proof-line">Proven by AdLib, a Meta Ad Library extension.</p>
+      </div>
+
+      <div class="service">
+        <h3>AI features inside your product</h3>
+        <p>LLM logic built into something that already exists — categorisation,
+           extraction, chat, summarisation. Scoped so it fails gracefully
+           instead of confidently making things up.</p>
+        <p class="proof-line">Proven by Spendpedia's voice entry and auto-categorisation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <img class="portrait" src="images/mubeen.png" width="200" height="200" alt="Mubeen Khan" loading="lazy">
+      <div>
+        <p class="eyebrow">About</p>
+        <h2>Most software never gets published. Mine does.</h2>
+        <p class="lead">
+          I am Mohammed Abdul Mubeen Khan, a solo developer working from India.
+        </p>
+        <p>
+          The distance between a working prototype and something a stranger can
+          download is where most projects quietly die. Privacy policies,
+          data-safety forms, permission justifications, trader verification,
+          rejections that arrive with no explanation. I have crossed that
+          distance on Google Play, the Microsoft Store and the Chrome Web Store,
+          and I know what each of them asks for before it asks.
+        </p>
+        <p>
+          I work fast — AI tooling is a large part of how, and I review
+          everything that ships — but speed is not the point. Finishing is. You
+          can download five of the things on this page right now, which is a
+          claim most freelance profiles cannot make.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <p class="eyebrow">Get in touch</p>
+      <h2>Tell me what you want built</h2>
+      <p class="lead" style="max-width:52ch">
+        A paragraph is enough to start. Tell me what it should do and who it is
+        for, and I will tell you honestly whether I am the right person, what it
+        would take, and roughly what it would cost.
+      </p>
+
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="mailto:mamubeenkhan@gmail.com?subject=Project%20enquiry">Email me</a>
+        <a class="btn btn-line" href="https://wa.me/918328681249" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+
+      <p class="small">
+        mamubeenkhan@gmail.com · +91 83286 81249 · I reply within one working day.
+        I also take work through
+        <a href="https://www.upwork.com/freelancers/~01b1a4192e5a8aa284" target="_blank" rel="noopener">Upwork</a>
+        if you would rather have escrow and contracts handled for you.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-row">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="https://github.com/MAMubeenKhan" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.upwork.com/freelancers/~01b1a4192e5a8aa284" target="_blank" rel="noopener">Upwork</a>
+    </div>
+    <p style="margin:0">© <span id="yr">2026</span> Mohammed Abdul Mubeen Khan</p>
+  </div>
+</footer>
+
+<div class="bar">
+  <a class="btn btn-line" href="https://wa.me/918328681249" target="_blank" rel="noopener">WhatsApp</a>
+  <a class="btn btn-primary" href="mailto:mamubeenkhan@gmail.com?subject=Project%20enquiry">Email me</a>
+</div>
+
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
 </body>
 </html>

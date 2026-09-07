@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spendpedia — Mubeen Khan</title>
+<meta name="description" content="An expense tracker built around the thing that kills every expense tracker: nobody wants to type in what they just spent.">
+<meta property="og:title" content="Spendpedia — Mubeen Khan">
+<meta property="og:description" content="An expense tracker built around the thing that kills every expense tracker: nobody wants to type in what they just spent.">
+<link rel="icon" href="../images/apps/adlib-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Mubeen Khan<span>.</span></a>
+    <nav class="nav">
+      <a href="../index.html#work">Work</a>
+      <a class="only-wide" href="../index.html#services">Services</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="case-head">
+    <a class="back" href="../index.html#work">← All work</a>
+    <div class="card-top">
+      <img class="app-icon" src="../images/apps/spendpedia-icon.png" alt="" width="64" height="64">
+      <div>
+        <h3 style="font-size:1rem;color:var(--ink-faint);font-weight:500;margin:0">Personal finance · Android</h3>
+      </div>
+    </div>
+    <h1>Spendpedia</h1>
+    <p class="lead">An expense tracker built around the thing that kills every expense tracker: nobody wants to type in what they just spent.</p>
+    <p><span class="pill pill-live">Live on Google Play</span></p>
+    <div class="case-links"><a class="btn btn-line" href="https://play.google.com/store/apps/details?id=com.spendpedia.app" target="_blank" rel="noopener">Google Play ↗</a><a class="btn btn-line" href="https://spendpedia.com" target="_blank" rel="noopener">spendpedia.com ↗</a></div>
+  </div>
+
+  <div class="facts">
+    <div><b>Platform</b><span>Android 7.0+, iOS in progress</span></div>
+    <div><b>Stack</b><span>Flutter, cloud sync, LLM categorisation</span></div>
+    <div><b>Role</b><span>Everything — design, build, store listing, submission</span></div>
+    <div><b>Model</b><span>Free tier, premium subscription, 7-day trial</span></div>
+  </div>
+
+  <div class="shots"><img src="../images/apps/spendpedia-1.jpg" alt="Spendpedia screenshot" loading="lazy"><img src="../images/apps/spendpedia-3.jpg" alt="Spendpedia screenshot" loading="lazy"><img src="../images/apps/spendpedia-4.jpg" alt="Spendpedia screenshot" loading="lazy"><img src="../images/apps/spendpedia-6.jpg" alt="Spendpedia screenshot" loading="lazy"></div>
+
+  <div class="prose">
+    <h2>The problem</h2>
+    <p>Almost everyone has installed a budgeting app and stopped using it within two weeks. The reason is never the charts. It is that logging a coffee takes six taps, and after the fourth day you stop bothering — and an expense tracker with four days of data in it is worse than none, because it tells you a confidently wrong story.</p>
+    <p>So the design problem was not analytics. It was reducing the cost of entering a single expense to almost nothing.</p>
+
+    <h2>What I built</h2>
+    <ul>
+      <li><strong>Voice entry with AI categorisation.</strong> Say what you spent and the app parses the amount, guesses the category and files it. The LLM only handles the messy part — turning free speech into structured fields — while the arithmetic stays ordinary code, because a language model should never be the thing adding up someone's money.</li>
+      <li><strong>Budgets that speak up.</strong> Monthly limits per category with alerts as you approach them, rather than a report at month end telling you what you already cannot change.</li>
+      <li><strong>Analytics worth opening.</strong> Category breakdowns and spending patterns over time, which is what turns logging into a habit that pays back.</li>
+      <li><strong>Your data stays yours.</strong> Encrypted cloud sync across devices, full offline operation, and export to CSV or PDF. No ads.</li>
+    </ul>
+
+    <h2>The part that was actually hard</h2>
+    <p>Financial apps get the strictest treatment on Google Play. The data-safety declaration has to match what the app actually does, field by field, and a mismatch between the form and the binary is a rejection rather than a question.</p>
+    <p>Offline-first sync is the part people underestimate. The app has to work fully with no connection and then reconcile without ever silently losing or duplicating an entry — because in a finance app, a duplicated entry is not a bug, it is a wrong number the user trusts.</p>
+
+    <h2>Where it is now</h2>
+    <p>Live on Google Play with a free tier and a premium subscription. The iOS build is in progress. The site carries a budget calculator and a set of personal-finance articles, both aimed at search traffic rather than at existing users.</p>
+  </div>
+
+  <div class="next">
+    <p class="eyebrow">Next</p>
+    <h2 style="margin-bottom:18px"><a href="hushthem.html" style="text-decoration:none">HushThem →</a></h2>
+    <p class="lead" style="margin-bottom:26px">Or tell me what you want built.</p>
+    <div class="contact-actions" style="margin:0">
+      <a class="btn btn-primary" href="mailto:mamubeenkhan@gmail.com?subject=Project%20enquiry">Email me</a>
+      <a class="btn btn-line" href="https://wa.me/918328681249" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-row">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#contact">Contact</a>
+      <a href="https://github.com/MAMubeenKhan" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <p style="margin:0">© <span id="yr">2026</span> Mohammed Abdul Mubeen Khan</p>
+  </div>
+</footer>
+
+<div class="bar">
+  <a class="btn btn-line" href="https://wa.me/918328681249" target="_blank" rel="noopener">WhatsApp</a>
+  <a class="btn btn-primary" href="mailto:mamubeenkhan@gmail.com?subject=Project%20enquiry">Email me</a>
+</div>
+
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AdLib — Mubeen Khan</title>
+<meta name="description" content="Makes Meta's Ad Library usable — sortable, filterable, exportable. The most technically demanding thing on this site.">
+<meta property="og:title" content="AdLib — Mubeen Khan">
+<meta property="og:description" content="Makes Meta's Ad Library usable — sortable, filterable, exportable. The most technically demanding thing on this site.">
+<link rel="icon" href="../images/apps/adlib-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Mubeen Khan<span>.</span></a>
+    <nav class="nav">
+      <a href="../index.html#work">Work</a>
+      <a class="only-wide" href="../index.html#services">Services</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="case-head">
+    <a class="back" href="../index.html#work">← All work</a>
+    <div class="card-top">
+      <img class="app-icon" src="../images/apps/adlib-icon.png" alt="" width="64" height="64">
+      <div>
+        <h3 style="font-size:1rem;color:var(--ink-faint);font-weight:500;margin:0">Chrome extension · MV3</h3>
+      </div>
+    </div>
+    <h1>AdLib</h1>
+    <p class="lead">Makes Meta's Ad Library usable — sortable, filterable, exportable. The most technically demanding thing on this site.</p>
+    <p><span class="pill ">In store review</span></p>
+    
+  </div>
+
+  <div class="facts">
+    <div><b>Platform</b><span>Chrome, Manifest V3</span></div>
+    <div><b>Stack</b><span>TypeScript, React, Vite, CRXJS</span></div>
+    <div><b>Role</b><span>Everything — research, build, store submission</span></div>
+    <div><b>Status</b><span>In Chrome Web Store review</span></div>
+  </div>
+
+  
+
+  <div class="prose">
+    <h2>The problem</h2>
+    <p>Meta's Ad Library holds every ad running on Facebook and Instagram and is close to unusable. You cannot sort it. You cannot filter it properly. You cannot export it. Finding which of an advertiser's two thousand ads has been running longest means scrolling, by hand, for a very long time.</p>
+    <p>Every commercial tool in this space solves it by scraping Meta from their own servers. That is the easy path and it is the one I deliberately did not take.</p>
+
+    <h2>What I built</h2>
+    <ul>
+      <li><strong>Everything happens in the user's own browser.</strong> The extension reads the data the page has already loaded on the user's own session. No server ever contacts Meta. That is a legal posture, chosen up front, and the architecture is built around it rather than bolted on.</li>
+      <li><strong>Sort, filter, search</strong> across an advertiser's entire catalogue, including sorting by how long an ad has been running — the signal that actually indicates a competitor is spending money.</li>
+      <li><strong>Creative reuse detection</strong> — which creatives appear in more than one ad set, which is how you tell what is being scaled from what is being tested.</li>
+      <li><strong>CSV export and bulk media download</strong>, throttled deliberately, because the requests are spent on the user's own session and a rate-limited account is a lost customer.</li>
+    </ul>
+
+    <h2>The part that was actually hard</h2>
+    <p>The data comes from intercepting the page's own GraphQL responses, which means running code in two isolated JavaScript contexts and bridging them, with reconciliation counters so a dropped message can never look like an advertiser simply having fewer ads.</p>
+    <p>Meta's field names change without warning. Every one of them is quarantined in a single adapter file, and an 878-case fixture suite built from real captured traffic gates every change — so when the schema drifts, exactly one file needs editing and the tests say which line.</p>
+    <p>One measurement changed the whole product. Reach data exists only in a per-ad request, one ad at a time, so bulk reach estimation is not honestly possible on a user's own session. I measured that before building the feature and cut it, rather than shipping a number I could not stand behind.</p>
+
+    <h2>Where it is now</h2>
+    <p>In review at the Chrome Web Store, launching free.</p>
+  </div>
+
+  <div class="next">
+    <p class="eyebrow">Next</p>
+    <h2 style="margin-bottom:18px"><a href="spendpedia.html" style="text-decoration:none">Spendpedia →</a></h2>
+    <p class="lead" style="margin-bottom:26px">Or tell me what you want built.</p>
+    <div class="contact-actions" style="margin:0">
+      <a class="btn btn-primary" href="mailto:mamubeenkhan@gmail.com?subject=Project%20enquiry">Email me</a>
+      <a class="btn btn-line" href="https://wa.me/918328681249" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-row">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#contact">Contact</a>
+      <a href="https://github.com/MAMubeenKhan" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <p style="margin:0">© <span id="yr">2026</span> Mohammed Abdul Mubeen Khan</p>
+  </div>
+</footer>
+
+<div class="bar">
+  <a class="btn btn-line" href="https://wa.me/918328681249" target="_blank" rel="noopener">WhatsApp</a>
+  <a class="btn btn-primary" href="mailto:mamubeenkhan@gmail.com?subject=Project%20enquiry">Email me</a>
+</div>
+
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+</body>
+</html>

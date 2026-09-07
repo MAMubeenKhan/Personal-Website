@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CuePaste — Mubeen Khan</title>
+<meta name="description" content="A sequential clipboard queue. Copy five things in order, paste them back one at a time, in that order.">
+<meta property="og:title" content="CuePaste — Mubeen Khan">
+<meta property="og:description" content="A sequential clipboard queue. Copy five things in order, paste them back one at a time, in that order.">
+<link rel="icon" href="../images/apps/adlib-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Mubeen Khan<span>.</span></a>
+    <nav class="nav">
+      <a href="../index.html#work">Work</a>
+      <a class="only-wide" href="../index.html#services">Services</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="case-head">
+    <a class="back" href="../index.html#work">← All work</a>
+    <div class="card-top">
+      <img class="app-icon" src="../images/apps/cuepaste-icon.png" alt="" width="64" height="64">
+      <div>
+        <h3 style="font-size:1rem;color:var(--ink-faint);font-weight:500;margin:0">Productivity · Windows</h3>
+      </div>
+    </div>
+    <h1>CuePaste</h1>
+    <p class="lead">A sequential clipboard queue. Copy five things in order, paste them back one at a time, in that order.</p>
+    <p><span class="pill pill-live">Live on Microsoft Store</span></p>
+    <div class="case-links"><a class="btn btn-line" href="https://apps.microsoft.com/detail/9p1tsjklw82w" target="_blank" rel="noopener">Microsoft Store ↗</a></div>
+  </div>
+
+  <div class="facts">
+    <div><b>Platform</b><span>Windows 10 and 11</span></div>
+    <div><b>Stack</b><span>Windows desktop, MSIX packaging</span></div>
+    <div><b>Role</b><span>Everything — design, build, packaging, certification</span></div>
+    <div><b>Model</b><span>Microsoft Store</span></div>
+  </div>
+
+  <div class="shots"><img src="../images/apps/cuepaste-1.jpg" alt="CuePaste screenshot" loading="lazy"><img src="../images/apps/cuepaste-2.jpg" alt="CuePaste screenshot" loading="lazy"></div>
+
+  <div class="prose">
+    <h2>The problem</h2>
+    <p>Moving several pieces of information between two windows means alt-tabbing once per item: copy, switch, paste, switch back, copy the next. Filling a form from a document, or moving fields between two systems, turns into dozens of pointless context switches.</p>
+    <p>Clipboard history managers exist, but they solve a different problem — they let you hunt back through what you copied. Nobody wants to hunt. You already know the order.</p>
+
+    <h2>What I built</h2>
+    <ul>
+      <li><strong>A queue, not a history.</strong> Copy several items and they line up. Each paste takes the next one. The order you copied is the order you get back.</li>
+      <li><strong>Stays out of the way.</strong> It is a small utility that sits behind the keyboard shortcuts you already use, rather than an app you open.</li>
+    </ul>
+
+    <h2>The part that was actually hard</h2>
+    <p>Microsoft Store certification is a different discipline from Google Play — MSIX packaging, identity, capability declarations, and a certification pass that fails on details a web developer never encounters.</p>
+    <p>Clipboard interception has to be careful. It sits in the path of everything a user copies, including passwords, so the correct behaviour is to hold as little as possible for as short a time as possible.</p>
+
+    <h2>Where it is now</h2>
+    <p>Live on the Microsoft Store for Windows 10 and 11.</p>
+  </div>
+
+  <div class="next">
+    <p class="eyebrow">Next</p>
+    <h2 style="margin-bottom:18px"><a href="riverside-files.html" style="text-decoration:none">Riverside Files →</a></h2>
+    <p class="lead" style="margin-bottom:26px">Or tell me what you want built.</p>
+    <div class="contact-actions" style="margin:0">
+      <a class="btn btn-primary" href="mailto:mamubeenkhan@gmail.com?subject=Project%20enquiry">Email me</a>
+      <a class="btn btn-line" href="https://wa.me/918328681249" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-row">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#contact">Contact</a>
+      <a href="https://github.com/MAMubeenKhan" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <p style="margin:0">© <span id="yr">2026</span> Mohammed Abdul Mubeen Khan</p>
+  </div>
+</footer>
+
+<div class="bar">
+  <a class="btn btn-line" href="https://wa.me/918328681249" target="_blank" rel="noopener">WhatsApp</a>
+  <a class="btn btn-primary" href="mailto:mamubeenkhan@gmail.com?subject=Project%20enquiry">Email me</a>
+</div>
+
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+</body>
+</html>

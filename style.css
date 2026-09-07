@@ -11,28 +11,39 @@
    ========================================================================== */
 
 :root {
-  --ink: #0d0f13;
-  --ink-soft: #474d57;
-  --ink-faint: #767d88;
-  --paper: #f7f5f1;
-  --card: #ffffff;
-  --line: #e3ded5;
-  --line-strong: #cfc8bc;
+  /* Dark is the design, not a mode. The site looked light on a phone and dark
+     on a desktop purely because the two machines disagreed about
+     prefers-color-scheme, which meant no visitor saw the same site as any
+     other. So the palette is fixed and the system preference is ignored.
 
-  --accent: #e2622a;
-  --accent-dark: #bd4d1d;
-  --accent-wash: #fbeade;
-  --live: #1c7a41;
-  --live-wash: #e6f5ec;
+     The light palette is kept below under [data-theme="light"]: unused today,
+     one attribute away if it is ever wanted. */
+  color-scheme: dark;
 
-  --night: #0d0f13;
-  --night-soft: #1a1e25;
+  --ink: #f4f2ee;
+  --ink-soft: #b0b6bf;
+  --ink-faint: #868d97;
+  --paper: #0d0f13;
+  --card: #171b22;
+  --line: #262b34;
+  --line-strong: #39404b;
+
+  --accent: #f2793d;
+  --accent-dark: #e2622a;
+  --accent-wash: #241409;
+  --live: #5fcf8b;
+  --live-wash: #10241a;
+
+  /* The hero sits deeper than the page so the top still reads as an anchor
+     rather than dissolving into it. */
+  --night: #07080b;
+  --night-soft: #12151b;
   --night-line: #262b34;
   --night-text: #c6cad2;
 
-  --shadow-sm: 0 1px 2px rgba(13, 15, 19, .06);
-  --shadow: 0 4px 12px rgba(13, 15, 19, .06), 0 18px 40px rgba(13, 15, 19, .08);
-  --shadow-lift: 0 8px 20px rgba(13, 15, 19, .1), 0 30px 60px rgba(13, 15, 19, .14);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4);
+  --shadow: 0 4px 12px rgba(0, 0, 0, .3), 0 18px 40px rgba(0, 0, 0, .35);
+  --shadow-lift: 0 8px 20px rgba(0, 0, 0, .4), 0 30px 60px rgba(0, 0, 0, .45);
 
   --wrap: 1140px;
   --gap: 20px;
@@ -44,26 +55,28 @@
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --ink: #f4f2ee;
-    --ink-soft: #b0b6bf;
-    --ink-faint: #868d97;
-    --paper: #0d0f13;
-    --card: #161a20;
-    --line: #262b34;
-    --line-strong: #39404b;
-    --accent: #f2793d;
-    --accent-dark: #e2622a;
-    --accent-wash: #241409;
-    --live: #5fcf8b;
-    --live-wash: #10241a;
-    --night-soft: #161a20;
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4);
-    --shadow: 0 4px 12px rgba(0, 0, 0, .3), 0 18px 40px rgba(0, 0, 0, .35);
-    --shadow-lift: 0 8px 20px rgba(0, 0, 0, .4), 0 30px 60px rgba(0, 0, 0, .45);
-  }
+/* Kept, unused. Set data-theme="light" on <html> to switch the whole site. */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --ink: #0d0f13;
+  --ink-soft: #474d57;
+  --ink-faint: #767d88;
+  --paper: #f7f5f1;
+  --card: #ffffff;
+  --line: #e3ded5;
+  --line-strong: #cfc8bc;
+  --accent: #e2622a;
+  --accent-dark: #bd4d1d;
+  --accent-wash: #fbeade;
+  --live: #1c7a41;
+  --live-wash: #e6f5ec;
+  --night: #0d0f13;
+  --night-soft: #1a1e25;
+  --shadow-sm: 0 1px 2px rgba(13, 15, 19, .06);
+  --shadow: 0 4px 12px rgba(13, 15, 19, .06), 0 18px 40px rgba(13, 15, 19, .08);
+  --shadow-lift: 0 8px 20px rgba(13, 15, 19, .1), 0 30px 60px rgba(13, 15, 19, .14);
 }
+
 
 * { box-sizing: border-box; }
 
@@ -521,7 +534,7 @@ a.card:hover {
   padding: 5px 11px;
   border-radius: 999px;
   background: var(--accent-wash);
-  color: var(--accent-dark);
+  color: var(--accent);
   border: 1px solid color-mix(in srgb, var(--accent) 26%, transparent);
 }
 
@@ -531,9 +544,6 @@ a.card:hover {
   border-color: color-mix(in srgb, var(--live) 30%, transparent);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .pill { color: var(--accent); }
-}
 
 /* --- how I work ---------------------------------------------------------- */
 

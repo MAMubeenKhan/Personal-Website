@@ -391,7 +391,10 @@ PAGE = """<!DOCTYPE html>
 <meta name="description" content="{summary_plain}">
 <meta property="og:title" content="{name} — Mubeen Khan">
 <meta property="og:description" content="{summary_plain}">
-<link rel="icon" href="../images/apps/adlib-icon.png">
+<link rel="icon" href="../favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">

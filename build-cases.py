@@ -224,7 +224,7 @@ CASES = [
         "name": "Riverside Files",
         "kind": "Idle tycoon game · Android",
         "icon": "riverside-icon.png",
-        "status": ("pending", "In review for production"),
+        "status": ("live", "Live on Google Play"),
         "summary": "An idle detective-agency tycoon. Hire investigators, take "
                    "cases, grow the agency — and keep earning while the app is "
                    "shut.",
@@ -232,9 +232,9 @@ CASES = [
             ("Platform", "Android, iOS planned"),
             ("Stack", "Flutter"),
             ("Role", "Everything — design, systems, balancing, build"),
-            ("Status", "Awaiting production access on Google Play"),
+            ("Status", "Live on Google Play"),
         ],
-        "links": [],
+        "links": [("Google Play", "https://play.google.com/store/apps/details?id=com.riverside.riverside_files")],
         "shots": [],
         "problem": [
             "Idle games look simple and are the opposite. The genre lives or "
@@ -263,10 +263,10 @@ CASES = [
             "repeatedly, at different stages.",
             "Google Play now requires new personal developer accounts to run a "
             "closed test before production access is granted. That is a real "
-            "gate with real testers and a real waiting period, and it is where "
-            "the game currently sits.",
+            "gate with real testers and a real waiting period, and clearing it "
+            "took longer than building the feature it was gating.",
         ],
-        "now": "In review for production access on Google Play.",
+        "now": "Live on Google Play.",
     },
     {
         "slug": "gym-management",

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Screenshotline — Mubeen Khan</title>
+<meta name="description" content="A screenshot API that survives production: URL in, image out, with consent banners, ads and blank captures handled. Open source, hosted, built and run solo.">
+<meta property="og:title" content="Screenshotline — Mubeen Khan">
+<meta property="og:description" content="A screenshot API that survives production: URL in, image out, with consent banners, ads and blank captures handled. Open source, hosted, built and run solo.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#07080b">
+<link rel="icon" href="../favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Mubeen Khan<span>.</span></a>
+    <nav class="nav">
+      <a href="../index.html#products">Products</a>
+      <a class="only-wide" href="../index.html#work">Work</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="case-head">
+    <a class="back" href="../index.html#products">← All products</a>
+    <div class="card-top">
+      <img class="app-icon" src="../images/apps/screenshotline-icon.svg" alt="" width="64" height="64">
+      <div>
+        <h3 style="font-size:1rem;color:var(--ink-faint);font-weight:500;margin:0">Screenshot API · for developers</h3>
+      </div>
+    </div>
+    <h1>Screenshotline</h1>
+    <p class="lead">A screenshot API that survives production. URL in, image out — with the consent walls, ad holes and blank captures that break every home-grown version already handled.</p>
+    <p><span class="pill pill-live">Live at screenshotline.com</span></p>
+  </div>
+
+  <div class="facts">
+    <div><b>Product</b><span>Hosted API, plus the same renderer self-hostable with Docker</span></div>
+    <div><b>Stack</b><span>Node.js, headless Chrome (Puppeteer), SQLite, Docker, Caddy</span></div>
+    <div><b>Role</b><span>Everything — renderer, billing, infrastructure, docs, launch</span></div>
+    <div><b>Model</b><span>500 free renders a month, paid plans from $17; open source (AGPL-3.0)</span></div>
+  </div>
+
+  <figure class="browser-shot" style="margin:0 0 8px">
+    <img src="../images/apps/screenshotline-home.png" alt="The screenshotline.com home page, with its live demo" loading="lazy" width="1280" height="800">
+    <figcaption>screenshotline.com — this image was captured by Screenshotline itself.</figcaption>
+  </figure>
+
+  <div class="prose">
+    <h2>The problem</h2>
+    <p>Taking one screenshot of a web page with headless Chrome is twenty minutes of work. Taking a few million is a different job entirely, and almost everything that goes wrong is invisible — not a crash, but a successful response with the wrong picture in it: a cookie wall, a half-loaded page, a grey hole where an ad was blocked, or a blank frame the customer's pipeline records as a success.</p>
+    <p>Developers pay a screenshot API to not own that list. So the product is not the endpoint. It is the list.</p>
+
+    <h2>What I built</h2>
+    <ul>
+      <li><strong>One GET request, binary image back.</strong> No JSON envelope, so the URL drops straight into an <code>&lt;img src&gt;</code>; signed URLs keep an API key out of public HTML.</li>
+      <li><strong>The page the user meant, not the page that loaded.</strong> Consent banners (including ones inside shadow DOM), ads with their empty slots collapsed, chat widgets and newsletter popups removed — each behind its own switch.</li>
+      <li><strong>It says when a capture is probably wrong.</strong> Blank detection with two independent signals, reported in a header rather than returned as a silent success.</li>
+      <li><strong>Pages as Markdown, for AI agents.</strong> The same render read as text instead of photographed, and a hosted MCP server listed in the official MCP Registry, so an agent can connect by URL.</li>
+      <li><strong>A real business around it.</strong> Accounts, keys, metered billing through a merchant of record, a free tier with abuse limits, and privacy-first analytics — run on a single $3-a-month server.</li>
+    </ul>
+
+    <h2>The part that was actually hard</h2>
+    <p>Correctness, measured rather than claimed. Every change runs against 202 real websites. Of the 182 that should work, all 182 capture correctly; the other 20 are deliberately hard — bot walls, captchas, paywalls — and each one that returned something was opened by eye, because two of them were captchas that a naive count would have recorded as wins.</p>
+    <p>The worst bug had no symptom at all. The page scripts are built as JavaScript template literals, and a lone <code>\b</code> inside one collapses into a backspace character — so a word-boundary fix compiled into a regex that matched nothing, and the consent-banner detection was silently dead while every test passed and every page still rendered. There is now a test that scans the generated scripts for control characters, which is the only reason that class of bug is visible.</p>
+
+    <h2>Where it is now</h2>
+    <p>Live, taking signups, with its public open-source launch in September 2026. Try it without an account at <a href="https://screenshotline.com" target="_blank" rel="noopener">screenshotline.com</a>.</p>
+  </div>
+
+  <div class="next">
+    <p class="eyebrow">Next</p>
+    <h2 style="margin-bottom:18px"><a href="adlib.html" style="text-decoration:none">AdLib →</a></h2>
+    <p class="lead" style="margin-bottom:26px">Or tell me what you want built.</p>
+    <div class="contact-actions" style="margin:0">
+      <a class="btn btn-primary" href="https://screenshotline.com" target="_blank" rel="noopener">Try Screenshotline</a>
+      <a class="btn btn-line" href="mailto:mamubeenkhan@gmail.com?subject=Project%20enquiry">Email me</a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-row">
+      <a href="../index.html#products">Products</a>
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#contact">Contact</a>
+      <a href="https://github.com/MAMubeenKhan" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <p style="margin:0">© <span id="yr">2026</span> Mohammed Abdul Mubeen Khan</p>
+  </div>
+</footer>
+
+<div class="bar">
+  <a class="btn btn-line" href="https://wa.me/918328681249" target="_blank" rel="noopener">WhatsApp</a>
+  <a class="btn btn-primary" href="mailto:mamubeenkhan@gmail.com?subject=Project%20enquiry">Email me</a>
+</div>
+
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+</body>
+</html>

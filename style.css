@@ -334,6 +334,47 @@ p { margin: 0 0 1.1em; }
   .shot:nth-child(3) { transform: rotate(6deg) translateY(12px); z-index: 2; }
 }
 
+/* --- the browser shot ---------------------------------------------------- */
+
+/* The B2B tools are web products, not phone apps, so they get a browser
+   frame instead of the phone fan. Captioned for the same reason the phones
+   are: an unlabelled screenshot reads as decoration, not as the work.
+   Mobile first - full width - and tilted slightly beside the hero text only
+   once there is room for it. */
+.browser-shot { margin: 0 0 44px; }
+
+.browser-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, .14);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, .45);
+  background: #1a1e25;
+}
+
+.browser-shot figcaption {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 14px;
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: var(--ink-faint);
+}
+
+.browser-shot figcaption img {
+  width: 18px; height: 18px;
+  border: 0; box-shadow: none; border-radius: 5px;
+  flex: none;
+}
+
+.browser-shot figcaption b { color: #fff; font-weight: 500; }
+
+@media (min-width: 960px) {
+  .hero .browser-shot { margin: 0; transform: rotate(-1.5deg); }
+}
+
 /* --- buttons ------------------------------------------------------------- */
 
 .btn {

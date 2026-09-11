@@ -6,7 +6,7 @@ Static site. No build step, no framework, no dependencies. Open
 ## Layout
 
 ```
-index.html          home — hero, work grid, services, about, contact
+index.html          home — hero, products (B2B), also-shipped grid, services, about, contact
 style.css           the entire design system, mobile first
 work/*.html         one case study per product
 images/apps/        app icons and screenshots
@@ -37,6 +37,20 @@ in `index.html`.
 - **Products with no artwork get a monogram tile** (`.app-icon.mono`), rather
   than borrowing another app's icon.
 
+## Positioning
+
+The site leads with **indie B2B tools** — Screenshotline for developers,
+AdLib for marketers — because two tools for people at work are a stronger
+identity than a list of unrelated consumer apps. Those two are featured in
+`#products`; everything else lives in `#work` as the track record. Keep new
+B2B products in `#products` and consumer apps in `#work`.
+
+`work/screenshotline.html` was written by hand, not by `build-cases.py`, and
+the hero image `images/apps/screenshotline-home.png` was captured by
+Screenshotline itself. Re-capture it when the screenshotline.com home page
+changes: `curl -o images/apps/screenshotline-home.png
+"https://screenshotline.com/demo?url=https%3A%2F%2Fscreenshotline.com"`.
+
 ## To update
 
 - **Contact details** appear in `index.html` and in every `work/*.html` (the
@@ -48,5 +62,8 @@ in `index.html`.
 - **Riverside Files** currently uses a monogram and has no store link. When it
   passes review, add the icon to `images/apps/` and the Play link to both the
   card and `work/riverside-files.html`.
+- **Screenshotline's repo goes public on launch day.** Once
+  github.com/MAMubeenKhan/screenshotline is public, add it as a link in
+  `work/screenshotline.html` (facts strip and "Where it is now").
 - **The gym client is anonymous** at their request. If they agree to be named,
   update `work/gym-management.html`.

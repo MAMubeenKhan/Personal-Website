@@ -67,3 +67,7 @@ changes: `curl -o images/apps/screenshotline-home.png
   `work/screenshotline.html` (facts strip and "Where it is now").
 - **The gym client is anonymous** at their request. If they agree to be named,
   update `work/gym-management.html`.
+- **Comfort Selection** (client website) has no case study; its card links
+  straight to the live site on Firebase Hosting
+  (`comfort-selection-hyd.web.app`). Its repo is private. When the client
+  moves to their own domain, update the card's `href` in `index.html`.

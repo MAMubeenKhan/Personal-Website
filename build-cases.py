@@ -320,8 +320,8 @@ CASES = [
                "options are priced for chains.",
     },
     {
-        "slug": "adlib",
-        "name": "AdLib",
+        "slug": "longrun",
+        "name": "Longrun",
         "kind": "Chrome extension · MV3",
         "icon": "adlib-icon.png",
         "status": ("pending", "In store review"),
